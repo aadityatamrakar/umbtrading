@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style id="st_globalStyles">
+    /* SCROLLBAR */
+
+    [dark-scroll]::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    [dark-scroll]::-webkit-scrollbar-track-piece {
+      background-color: #2b2b2b;
+      border: 1px solid #1d1d1d;
+    }
+
+    [dark-scroll]::-webkit-scrollbar-thumb {
+      height: 10px;
+      background-color: #4d4d4d;
+    }
+
+    [dark-scroll]::-webkit-scrollbar-thumb:hover {
+      background-color: #5a5a5a;
+    }
+
+    /* LOAD PROGRESS */
+
+    .turbolinks-progress-bar {
+      height: 3px;
+      background-color: #ff6250;
+    }
+
+    /* GROUPING */
+
+    [data-id].ui-selecting {
+      box-shadow: inset 0 0 0 1px #4285f4 !important;
+    }
+
+    [data-id].ui-selected {
+      box-shadow: inset 0 0 0 1px #4285f4 !important;
+    }
+
+    /* CURSOR */
+
+    body[mode='comments'] * {
+      cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjkxNjQ4IDIzLjQxMDlDNS40OTE1MyAyMi45ODg3IDUuOTMxNzkgMjIuMzkzNSA2LjIzMjggMjEuNjQwN0M0Ljc5MDY5IDE5LjczODMgNCAxNy4zOTMzIDQgMTQuOTk3NUM0IDguOTM0MSA4LjkzMjgyIDQgMTUuMDAyMiA0QzIxLjA3MTcgNCAyNiA4LjkzOTE5IDI2IDE1LjAwMjVDMjYgMjEuMDY1OSAyMS4wNjcyIDI2IDE0Ljk5NzggMjZDMTIuOTg5NiAyNiAxMS4wMzUzIDI1LjQ1NTcgOS4zMjM2NyAyNC40MjMxQzguNDI5NjUgMjQuOTU3MiA3LjQxNDM0IDI1LjIyNjggNi4zMDAxOCAyNS4yMjY4QzUuOTU0MjYgMjUuMjI2OCA1LjU5OTM1IDI1LjIwMTQgNS4yNTM0MiAyNS4xNDU0QzQuOTAzIDI1LjA4OTUgNC42Mjg5NiAyNC44MDQ2IDQuNTUyNTggMjQuNDE4QzQuNDc2MjEgMjQuMDI2NCA0LjYxOTk3IDIzLjYyOTYgNC45MTY0OCAyMy40MTA5WiIgZmlsbD0iI0ZGNjI1MCIvPgo8L3N2Zz4K') 0 24,
+        auto !important;
+    }
+
+    body[mode='code'] [data-id]:not(.hidden) {
+      cursor: default;
+    }
+
+    /* default node state */
+
+    body[mode='code'] [data-id]:not(.hidden),
+    body[mode='comments'] [data-id]:not(.hidden) {
+      pointer-events: all;
+    }
+
+    /* is_image */
+
+    body[mode='code'] [data-id].is_image [data-id],
+    body[mode='comments'] [data-id].is_image [data-id] {
+      pointer-events: none !important;
+    }
+
+    /* without a data-id or ignored */
+
+    [data-id].ignore,
+    body[mode='code'] *:not([data-id]) {
+      pointer-events: none !important;
+    }
+
+    /* disable transforms for ignored elements */
+
+
+    body[mode='code'] [data-id]:hover {
+      transform: none !important;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">
+  <meta name="og:type" content="website">
+  <meta name="twitter:card" content="photo">
+  <script id="anima-hotspots-script" src="./splash-screen_files/hotspots.js"></script>
+  <style id="hotspots-styles">
+    .hotspot {
+      position: absolute;
+      border: 1px solid #2a9fd8;
+      background: rgba(0, 173, 255, 0.54);
+      opacity: 0;
+      z-index: -1;
+    }
+  </style>
+  <style id="hide-styles">
+    .hotspot {
+      display: none !important;
+    }
+  </style>
+  <script id="s_turbo" src="./splash-screen_files/turbolinks.min.js"></script>
+  <script id="anima-overrides-script" src="./splash-screen_files/overrides.js"></script>
+  <script src="./splash-screen_files/timeline.js"></script>
+  <style>
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+    @import url("https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic|ABeeZee:400");
+
+    .screen textarea:focus,
+    .screen input:focus {
+      outline: none;
+    }
+
+    .screen * {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+
+    .screen div {
+      -webkit-text-size-adjust: none;
+    }
+
+    .component-wrapper a {
+      display: contents;
+      pointer-events: auto;
+      text-decoration: none;
+    }
+
+    .component-wrapper * {
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+
+    .component-wrapper a *,
+    .component-wrapper input,
+    .component-wrapper video,
+    .component-wrapper iframe {
+      pointer-events: auto;
+    }
+
+    .component-wrapper.not-ready,
+    .component-wrapper.not-ready * {
+      visibility: hidden !important;
+    }
+
+    .screen a {
+      display: contents;
+      text-decoration: none;
+    }
+
+    .full-width-a {
+      width: 100%;
+    }
+
+    .full-height-a {
+      height: 100%;
+    }
+
+    .container-center-vertical {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .container-center-vertical>* {
+      flex-shrink: 0;
+      pointer-events: auto;
+    }
+
+    .container-center-horizontal {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      pointer-events: none;
+      width: 100%;
+    }
+
+    .container-center-horizontal>* {
+      flex-shrink: 0;
+      pointer-events: auto;
+    }
+
+    .auto-animated div {
+      --z-index: -1;
+      opacity: 0;
+      position: absolute;
+    }
+
+    .auto-animated input {
+      --z-index: -1;
+      opacity: 0;
+      position: absolute;
+    }
+
+    .auto-animated .container-center-vertical,
+    .auto-animated .container-center-horizontal {
+      opacity: 1;
+    }
+
+    .overlay {
+      display: none;
+      height: 100%;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .overlay.animate-appear {
+      animation: reveal 0.3s ease-in-out 1 normal forwards;
+      display: block;
+      opacity: 0;
+    }
+
+    .overlay.animate-disappear {
+      animation: reveal 0.3s ease-in-out 1 reverse forwards;
+      display: block;
+      opacity: 1;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .animate-nodelay {
+      animation-delay: 0s;
+    }
+
+    .align-self-flex-start {
+      align-self: flex-start;
+    }
+
+    .align-self-flex-end {
+      align-self: flex-end;
+    }
+
+    .align-self-flex-center {
+      align-self: flex-center;
+    }
+
+    .valign-text-middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .valign-text-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .listeners-active,
+    .listeners-active * {
+      pointer-events: auto;
+    }
+
+    .hidden,
+    .hidden * {
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .smart-layers-pointers,
+    .smart-layers-pointers * {
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .listeners-active-click,
+    .listeners-active-click * {
+      cursor: pointer;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #000000;
+      --botticelli: #c8d8e4;
+      --casal: #2b6777;
+      --chestnut: #b94848;
+      --concrete: #f2f2f2;
+      --green: #21bf73;
+      --polished-pine: #52ab98;
+      --white: #ffffff;
+
+      --font-size-l: 36px;
+      --font-size-m: 24px;
+      --font-size-s: 22px;
+      --font-size-xs: 18px;
+      --font-size-xxs: 16px;
+      --font-size-xxxs: 12px;
+      --font-size-xxxxs: 10px;
+
+      --font-family-abeezee: "ABeeZee", Helvetica;
+      --font-family-ubuntu: "Ubuntu", Helvetica;
+    }
+
+    .abeezee-normal-black-24px {
+      color: var(--black);
+      font-family: var(--font-family-abeezee);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .ubuntu-normal-black-16px {
+      color: var(--black);
+      font-family: var(--font-family-ubuntu);
+      font-size: var(--font-size-xxs);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .ubuntu-normal-black-18px {
+      color: var(--black);
+      font-family: var(--font-family-ubuntu);
+      font-size: var(--font-size-xs);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .abeezee-normal-botticelli-24px {
+      color: var(--botticelli);
+      font-family: var(--font-family-abeezee);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .ubuntu-normal-botticelli-24px {
+      color: var(--botticelli);
+      font-family: var(--font-family-ubuntu);
+      font-size: var(--font-size-m);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .ubuntu-normal-black-10px {
+      color: var(--black);
+      font-family: var(--font-family-ubuntu);
+      font-size: var(--font-size-xxxxs);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+    .ubuntu-normal-polished-pine-16px {
+      color: var(--polished-pine);
+      font-family: var(--font-family-ubuntu);
+      font-size: var(--font-size-xxs);
+      font-style: normal;
+      font-weight: 400;
+    }
+
+
+    /* screen - splash-screen */
+
+    .splash-screen {
+      background-color: #ffffff;
+      cursor: pointer;
+      height: 926px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      overflow: hidden;
+      overflow-x: hidden;
+      position: relative;
+      width: 424px;
+    }
+
+    .splash-screen .u-mass-highly-r-ted-trading-app-C61RwL {
+      --z-index: 0;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      height: 14px;
+      left: 124px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 885px;
+      width: auto;
+    }
+
+    .splash-screen .u-mass-highly-r-ted-trading-app-VMr6Om {
+      --z-index: 1;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: 31px;
+      left: 162px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 616px;
+      width: 100px;
+    }
+
+    .splash-screen .swipe-handle-C61RwL {
+      --z-index: 2;
+      background-color: transparent;
+      height: 5px;
+      left: 145px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 921px;
+      width: 134px;
+    }
+
+    .splash-screen .swipe-handle-x8PqoV {
+      --z-index: 0;
+      background-color: #000000;
+      border-radius: 10px;
+      height: 5px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: relative;
+      top: 0px;
+      width: 134px;
+    }
+
+    .splash-screen .logo-C61RwL {
+      --z-index: 3;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/logo@1x.png);
+      background-size: 100% 100%;
+      height: 315px;
+      left: -31px;
+      mix-blend-mode: normal;
+      object-fit: cover;
+      opacity: 1;
+      position: absolute;
+      top: 309px;
+      width: 432px;
+    }
+
+    /* screen - landing-page */
+
+    .landing-page {
+      background-color: #2b6777;
+      height: 926px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      overflow-x: hidden;
+      position: relative;
+      width: 428px;
+    }
+
+    .landing-page .navigation-bar-C61RwL {
+      --z-index: 0;
+      background-color: transparent;
+      height: 91px;
+      left: 0px;
+      opacity: 1;
+      position: absolute;
+      top: 835px;
+      width: 428px;
+    }
+
+    .landing-page .navigation-rectangle-2L5hEU {
+      --z-index: 0;
+      background-color: #f2f2f2;
+      height: 91px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 428px;
+    }
+
+    .landing-page .account-button-2L5hEU {
+      --z-index: 1;
+      background-color: transparent;
+      cursor: pointer;
+      height: 55px;
+      left: 325px;
+      opacity: 1;
+      position: absolute;
+      top: 14px;
+      width: 71px;
+    }
+
+    .landing-page .account-gtoBTx {
+      --z-index: 0;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 0px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: center;
+      top: 40px;
+      width: 69px;
+    }
+
+    .landing-page .solid-communication-user-gtoBTx {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/solid-communication-user@2x.png);
+      background-size: 100% 100%;
+      height: 40px;
+      left: 14px;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 40px;
+    }
+
+    .landing-page .funds-button-2L5hEU {
+      --z-index: 2;
+      background-color: transparent;
+      cursor: pointer;
+      height: 53px;
+      left: 228px;
+      opacity: 1;
+      position: absolute;
+      top: 16px;
+      width: 71px;
+    }
+
+    .landing-page .funds-dxEZtx {
+      --z-index: 0;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 0px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: center;
+      top: 38px;
+      width: 69px;
+    }
+
+    .landing-page .funds-1-dxEZtx {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/funds-1@2x.png);
+      background-size: 100% 100%;
+      height: 38px;
+      left: 16px;
+      mix-blend-mode: normal;
+      object-fit: cover;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 38px;
+    }
+
+    .landing-page .portfolio-button-2L5hEU {
+      --z-index: 3;
+      background-color: transparent;
+      cursor: pointer;
+      height: 55px;
+      left: 131px;
+      opacity: 1;
+      position: absolute;
+      top: 14px;
+      width: 71px;
+    }
+
+    .landing-page .portfolio-q9lLuL {
+      --z-index: 0;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 0px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: center;
+      top: 40px;
+      width: 69px;
+    }
+
+    .landing-page .solid-general-bag-q9lLuL {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/solid-general-bag@2x.png);
+      background-size: 100% 100%;
+      height: 40px;
+      left: 14px;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 40px;
+    }
+
+    .landing-page .watchlist-button-2L5hEU {
+      --z-index: 4;
+      background-color: transparent;
+      height: 55px;
+      left: 34px;
+      opacity: 1;
+      position: absolute;
+      top: 14px;
+      width: 71px;
+    }
+
+    .landing-page .watchlist-RVAxnp {
+      --z-index: 0;
+      background-color: transparent;
+      color: #52ab98;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 0px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: center;
+      top: 40px;
+      width: 69px;
+    }
+
+    .landing-page .solid-status-eye-RVAxnp {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/solid-status-eye-4@2x.png);
+      background-size: 100% 100%;
+      height: 40px;
+      left: 14px;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 40px;
+    }
+
+    .landing-page .search-bar-C61RwL {
+      --z-index: 1;
+      background-color: transparent;
+      height: 40px;
+      left: 29px;
+      opacity: 1;
+      position: absolute;
+      top: 200px;
+      width: 361px;
+    }
+
+    .landing-page .search-rectangle-raZGPH {
+      --z-index: 0;
+      background-color: #ffffff;
+      border-radius: 50px;
+      height: 40px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 359px;
+    }
+
+    .landing-page .search-raZGPH {
+      --z-index: 1;
+      background-color: transparent;
+      color: #000000b2;
+      font-family: 'ABeeZee', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 58px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: center;
+      top: 11px;
+      width: 239px;
+    }
+
+    .landing-page .search-icon-raZGPH {
+      --z-index: 2;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/search-icon@2x.png);
+      background-size: 100% 100%;
+      height: 24px;
+      left: 8px;
+      opacity: 1;
+      position: absolute;
+      top: 8px;
+      width: 24px;
+    }
+
+    .landing-page .search-button-raZGPH {
+      --z-index: 3;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/search-button@2x.png);
+      background-size: 100% 100%;
+      height: 24px;
+      left: 323px;
+      opacity: 1;
+      position: absolute;
+      top: 8px;
+      width: 24px;
+    }
+
+    .landing-page .stocks-scroll-C61RwL::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+
+    .landing-page .stocks-scroll-C61RwL {
+      --z-index: 2;
+      background-color: transparent;
+      height: 483px;
+      left: 42px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      overflow: hidden;
+      overflow-y: scroll;
+      position: absolute;
+      top: 311px;
+      width: 345px;
+    }
+
+    .landing-page .stocks-2NxadM {
+      --z-index: 0;
+      background-color: transparent;
+      height: 811px;
+      left: 0px;
+      opacity: 1;
+      position: relative;
+      top: 0px;
+      width: 345px;
+    }
+
+    .landing-page .huawei-yYGd1j {
+      --z-index: 0;
+      background-color: transparent;
+      height: 72px;
+      left: 1px;
+      opacity: 1;
+      position: absolute;
+      top: 739px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-2-yCje92 {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .vector-9-yCje92 {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-9@2x.svg);
+      background-size: 100% 100%;
+      height: 28px;
+      left: 158px;
+      opacity: 1;
+      position: absolute;
+      top: 26px;
+      width: 52px;
+    }
+
+    .landing-page .x320975-yCje92 {
+      --z-index: 2;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 251px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 22px;
+      width: auto;
+    }
+
+    .landing-page .x1877-yCje92 {
+      --z-index: 3;
+      background-color: transparent;
+      color: #ed1c24;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 286px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 47px;
+      width: auto;
+    }
+
+    .landing-page .huawei-yCje92 {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 62px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 26px;
+      width: 110px;
+    }
+
+    .landing-page .huawei-icon-yCje92 {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/huawei-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 27px;
+      left: 15px;
+      opacity: 1;
+      position: absolute;
+      top: 23px;
+      width: 35px;
+    }
+
+    .landing-page .nike-yYGd1j {
+      --z-index: 1;
+      background-color: transparent;
+      height: 72px;
+      left: 1px;
+      opacity: 1;
+      position: absolute;
+      top: 657px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-1-4HxbnA {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .vector-3-4HxbnA {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-3-1@2x.svg);
+      background-size: 100% 100%;
+      height: 29px;
+      left: 144px;
+      opacity: 1;
+      position: absolute;
+      top: 22px;
+      width: 52px;
+    }
+
+    .landing-page .x112915-4HxbnA {
+      --z-index: 2;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 252px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 23px;
+      width: auto;
+    }
+
+    .landing-page .x1277-4HxbnA {
+      --z-index: 3;
+      background-color: transparent;
+      color: #21bf73;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 283px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 48px;
+      width: auto;
+    }
+
+    .landing-page .nike-4HxbnA {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 61px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 24px;
+      width: 56px;
+    }
+
+    .landing-page .vector-4HxbnA {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector@2x.svg);
+      background-size: 100% 100%;
+      height: 12px;
+      left: 14px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 30px;
+      width: 35px;
+    }
+
+    .landing-page .kfc-yYGd1j {
+      --z-index: 2;
+      background-color: transparent;
+      height: 72px;
+      left: 1px;
+      opacity: 1;
+      position: absolute;
+      top: 575px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-4-OBDhn1 {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .x160065-OBDhn1 {
+      --z-index: 1;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 251px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 22px;
+      width: auto;
+    }
+
+    .landing-page .x543-OBDhn1 {
+      --z-index: 2;
+      background-color: transparent;
+      color: #ed1c24;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 290px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 47px;
+      width: auto;
+    }
+
+    .landing-page .vector-9-OBDhn1 {
+      --z-index: 3;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-9-1@2x.svg);
+      background-size: 100% 100%;
+      height: 37px;
+      left: 138px;
+      opacity: 1;
+      position: absolute;
+      top: 17px;
+      width: 60px;
+    }
+
+    .landing-page .kfc-OBDhn1 {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 59px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 23px;
+      width: 107px;
+    }
+
+    .landing-page .kfc-icon-OBDhn1 {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/kfc-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 31px;
+      left: 15px;
+      opacity: 1;
+      position: absolute;
+      top: 20px;
+      width: 31px;
+    }
+
+    .landing-page .mastercard-yYGd1j {
+      --z-index: 3;
+      background-color: transparent;
+      height: 72px;
+      left: 0px;
+      opacity: 1;
+      position: absolute;
+      top: 493px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-3-aubou2 {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .x250975-aubou2 {
+      --z-index: 1;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 249px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 23px;
+      width: auto;
+    }
+
+    .landing-page .x977-aubou2 {
+      --z-index: 2;
+      background-color: transparent;
+      color: #21bf73;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 288px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 48px;
+      width: auto;
+    }
+
+    .landing-page .vector-9-aubou2 {
+      --z-index: 3;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-9-2@2x.svg);
+      background-size: 100% 100%;
+      height: 37px;
+      left: 167px;
+      opacity: 1;
+      position: absolute;
+      top: 19px;
+      width: 60px;
+    }
+
+    .landing-page .mastercard-aubou2 {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 62px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 24px;
+      width: 94px;
+    }
+
+    .landing-page .mc-icon-aubou2 {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/mc-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 28px;
+      left: 15px;
+      opacity: 1;
+      position: absolute;
+      top: 22px;
+      width: 36px;
+    }
+
+    .landing-page .volkswagen-yYGd1j {
+      --z-index: 4;
+      background-color: transparent;
+      height: 72px;
+      left: 2px;
+      opacity: 1;
+      position: absolute;
+      top: 411px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-2-0xQXUE {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .vector-9-0xQXUE {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-9@2x.svg);
+      background-size: 100% 100%;
+      height: 28px;
+      left: 179px;
+      opacity: 1;
+      position: absolute;
+      top: 26px;
+      width: 52px;
+    }
+
+    .landing-page .x132915-0xQXUE {
+      --z-index: 2;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 248px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 22px;
+      width: auto;
+    }
+
+    .landing-page .x777-0xQXUE {
+      --z-index: 3;
+      background-color: transparent;
+      color: #ed1c24;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 288px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 47px;
+      width: auto;
+    }
+
+    .landing-page .volkswagen-0xQXUE {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 60px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 25px;
+      width: 101px;
+    }
+
+    .landing-page .volkswagen-VBml01 {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/volkswagen---@2x.svg);
+      background-size: 100% 100%;
+      height: 33px;
+      left: 15px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 19px;
+      width: 32px;
+    }
+
+    .landing-page .mc-donalds-yYGd1j {
+      --z-index: 5;
+      background-color: transparent;
+      height: 72px;
+      left: 1px;
+      opacity: 1;
+      position: absolute;
+      top: 329px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-1-XSp1Wl {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .vector-3-XSp1Wl {
+      --z-index: 1;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-3-1@2x.svg);
+      background-size: 100% 100%;
+      height: 29px;
+      left: 172px;
+      opacity: 1;
+      position: absolute;
+      top: 22px;
+      width: 52px;
+    }
+
+    .landing-page .x150975-XSp1Wl {
+      --z-index: 2;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 249px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 23px;
+      width: auto;
+    }
+
+    .landing-page .x877-XSp1Wl {
+      --z-index: 3;
+      background-color: transparent;
+      color: #21bf73;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 288px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 48px;
+      width: auto;
+    }
+
+    .landing-page .mc-donalds-XSp1Wl {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 59px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 27px;
+      width: 110px;
+    }
+
+    .landing-page .mc-donalds-icon-XSp1Wl {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/mcdonalds-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 31px;
+      left: 15px;
+      opacity: 1;
+      position: absolute;
+      top: 21px;
+      width: 31px;
+    }
+
+    .landing-page .tesla-yYGd1j {
+      --z-index: 6;
+      background-color: transparent;
+      height: 72px;
+      left: 0px;
+      opacity: 1;
+      position: absolute;
+      top: 247px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-4-xM1TBp {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .x250975-xM1TBp {
+      --z-index: 1;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 251px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 22px;
+      width: auto;
+    }
+
+    .landing-page .x1077-xM1TBp {
+      --z-index: 2;
+      background-color: transparent;
+      color: #d90429;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 284px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 47px;
+      width: auto;
+    }
+
+    .landing-page .vector-9-xM1TBp {
+      --z-index: 3;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-9-4@2x.svg);
+      background-size: 100% 100%;
+      height: 37px;
+      left: 142px;
+      opacity: 1;
+      position: absolute;
+      top: 17px;
+      width: 60px;
+    }
+
+    .landing-page .tesla-xM1TBp {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'ABeeZee', Helvetica;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 60px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 24px;
+      width: 56px;
+    }
+
+    .landing-page .tesla-icon-xM1TBp {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/tesla-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 31px;
+      left: 15px;
+      opacity: 1;
+      position: absolute;
+      top: 21px;
+      width: 30px;
+    }
+
+    .landing-page .instagram-yYGd1j {
+      --z-index: 7;
+      background-color: transparent;
+      height: 72px;
+      left: 0px;
+      opacity: 1;
+      position: absolute;
+      top: 165px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-3-Go7lQy {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .x154375-Go7lQy {
+      --z-index: 1;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 251px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 23px;
+      width: auto;
+    }
+
+    .landing-page .x1043-Go7lQy {
+      --z-index: 2;
+      background-color: transparent;
+      color: #21bf73;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 281px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 48px;
+      width: auto;
+    }
+
+    .landing-page .vector-9-Go7lQy {
+      --z-index: 3;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-9-5@2x.svg);
+      background-size: 100% 100%;
+      height: 37px;
+      left: 161px;
+      opacity: 1;
+      position: absolute;
+      top: 19px;
+      width: 60px;
+    }
+
+    .landing-page .instagram-Go7lQy {
+      --z-index: 4;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 61px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 24px;
+      width: 107px;
+    }
+
+    .landing-page .instagram-icon-Go7lQy {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/instagram-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 31px;
+      left: 16px;
+      opacity: 1;
+      position: absolute;
+      top: 20px;
+      width: 31px;
+    }
+
+    .landing-page .shell-yYGd1j {
+      --z-index: 8;
+      background-color: transparent;
+      height: 72px;
+      left: 0px;
+      opacity: 1;
+      position: absolute;
+      top: 83px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-2-1R1PSi {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .shell-1R1PSi {
+      --z-index: 1;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 63px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 28px;
+      width: 46px;
+    }
+
+    .landing-page .vector-9-1R1PSi {
+      --z-index: 2;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-9@2x.svg);
+      background-size: 100% 100%;
+      height: 28px;
+      left: 147px;
+      opacity: 1;
+      position: absolute;
+      top: 26px;
+      width: 52px;
+    }
+
+    .landing-page .x301050-1R1PSi {
+      --z-index: 3;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 250px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 23px;
+      width: auto;
+    }
+
+    .landing-page .x2015-1R1PSi {
+      --z-index: 4;
+      background-color: transparent;
+      color: #d90429;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 284px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 47px;
+      width: auto;
+    }
+
+    .landing-page .shell-icon-1R1PSi {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/shell-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 33px;
+      left: 16px;
+      opacity: 1;
+      position: absolute;
+      top: 23px;
+      width: 29px;
+    }
+
+    .landing-page .apple-yYGd1j {
+      --z-index: 9;
+      background-color: transparent;
+      cursor: pointer;
+      height: 72px;
+      left: 0px;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 349px;
+    }
+
+    .landing-page .rectangle-1-ChO6aT {
+      --z-index: 0;
+      background-color: #c8d8e4;
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px #00000040;
+      height: 72px;
+      left: 0px;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      width: 343px;
+    }
+
+    .landing-page .apple-ChO6aT {
+      --z-index: 1;
+      background-color: transparent;
+      color: #000000;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      height: auto;
+      left: 61px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 24px;
+      width: 60px;
+    }
+
+    .landing-page .vector-3-ChO6aT {
+      --z-index: 2;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/vector-3-1@2x.svg);
+      background-size: 100% 100%;
+      height: 29px;
+      left: 146px;
+      opacity: 1;
+      position: absolute;
+      top: 22px;
+      width: 52px;
+    }
+
+    .landing-page .x250975-ChO6aT {
+      --z-index: 3;
+      background-color: transparent;
+      color: #343a40;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      height: 18px;
+      left: 249px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 23px;
+      width: auto;
+    }
+
+    .landing-page .x977-ChO6aT {
+      --z-index: 4;
+      background-color: transparent;
+      color: #21bf73;
+      font-family: 'Ubuntu', Helvetica;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      height: 11px;
+      left: 288px;
+      letter-spacing: 0.00px;
+      line-height: normal;
+      mix-blend-mode: normal;
+      opacity: 1;
+      position: absolute;
+      text-align: left;
+      top: 48px;
+      width: auto;
+    }
+
+    .landing-page .apple-icon-ChO6aT {
+      --z-index: 5;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/apple-icon@2x.svg);
+      background-size: 100% 100%;
+      height: 31px;
+      left: 15px;
+      opacity: 1;
+      position: absolute;
+      top: 21px;
+      width: 26px;
+    }
+
+    .landing-page .menu-button-C61RwL {
+      --z-index: 3;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/menu-button@2x.png);
+      background-size: 100% 100%;
+      height: 38px;
+      left: 369px;
+      opacity: 1;
+      position: absolute;
+      top: 79px;
+      width: 38px;
+    }
+
+    .landing-page .logo-C61RwL {
+      --z-index: 4;
+      background-color: transparent;
+      background-image: url(https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/logo-1@2x.png);
+      background-size: 100% 100%;
+      height: 172px;
+      left: -30px;
+      mix-blend-mode: normal;
+      object-fit: cover;
+      opacity: 1;
+      position: absolute;
+      top: 26px;
+      width: 238px;
+    }
+  </style>
+  <style id="action-links-styles">
+    @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+    #anima-interface {
+      transition: all 0.5s ease-in-out;
+    }
+
+    #anima-watermark {
+      transition: all 0.5s ease-in-out;
+      display: none;
+    }
+
+    #anima-watermark-link {
+      position: fixed;
+      bottom: 20px;
+      height: 30px;
+      border-radius: 1000px;
+      background: #3B3B3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      text-decoration: none;
+      color: #fff;
+      padding: 8px 16px 8px 11px;
+      font-family: Mulish, sans-serif;
+      font-size: 12px;
+    }
+
+    #anima-watermark-link .text {
+      margin-left: 6px;
+    }
+
+    .omniview-anima-action-links .link {
+      height: 30px;
+      width: 30px;
+      border-radius: 1000px;
+      background: #3B3B3B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .omniview-anima-action-links #comment-link .text,
+    .omniview-anima-action-links #code-link .text {
+      display: none;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+    .omniview-anima-action-links #comment-link:hover,
+    .omniview-anima-action-links #code-link:hover {
+      width: 105px;
+    }
+
+    .omniview-anima-action-links #comment-link.pop-active,
+    .omniview-anima-action-links #code-link.pop-active {
+      width: 105px;
+      background: #FF6250;
+    }
+
+    .omniview-anima-action-links #comment-link.pop-active .text,
+    .omniview-anima-action-links #code-link.pop-active .text {
+      display: block
+    }
+
+    .omniview-anima-action-links #comment-link:hover .text,
+    .omniview-anima-action-links #code-link:hover .text {
+      display: block;
+    }
+
+    .link.navigation {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      height: 32px;
+      color: #fff;
+      font-size: 12px;
+      cursor: default;
+      padding: 0 5px;
+    }
+
+    .link.navigation .icon {
+      margin: 0 6px;
+      fill: none;
+      stroke: currentColor;
+      cursor: pointer;
+    }
+
+    .link.navigation .icon.disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+
+    .link.navigation .home-icon {
+      margin-left: 6px;
+      fill: currentColor;
+      stroke: currentColor;
+      cursor: pointer;
+    }
+
+    .omniview-anima-action-links .restart {
+      height: 30px;
+      padding: 0 12px;
+      background: #3B3B3B;
+      border-radius: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #f1f1f1;
+      font-size: 12px;
+    }
+
+    .omniview-anima-action-links {
+      display: flex;
+      align-items: center;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-family: Mulish, sans-serif;
+      transition: all 0.5s ease-in-out;
+      opacity: 1;
+    }
+
+    .omniview-anima-action-links>*+* {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+
+    .idle {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #popoverOpener {
+      position: absolute;
+      left: 50%;
+      margin-left: -10vw;
+      text-align: center;
+      top: 45vh;
+      width: 20vw;
+    }
+
+
+    .popover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1060;
+      display: none;
+      font-family: "sans-serif";
+      font-size: 14px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    }
+
+    .popover.top {
+      margin-top: -12px
+    }
+
+    .popover.right {
+      margin-left: 10px
+    }
+
+    .popover.bottom {
+      margin-top: 10px
+    }
+
+    .popover.left {
+      margin-left: -10px
+    }
+
+    .popover-title {
+      padding: 8px 14px;
+      margin: 0;
+      font-size: 14px;
+      background-color: #f7f7f7;
+      border-bottom: 1px solid #ebebeb;
+      border-radius: 5px 5px 0 0
+    }
+
+    .popover-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      font-family: Mulish, sans-serif;
+    }
+
+
+
+    .popover>.arrow,
+    .popover>.arrow:after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid
+    }
+
+    .popover>.arrow {
+      border-width: 11px
+    }
+
+    .popover>.arrow:after {
+      content: "";
+      border-width: 10px
+    }
+
+    .popover.top>.arrow {
+      bottom: -11px;
+      left: 50%;
+      margin-left: -11px;
+      border-top-color: #999;
+      border-top-color: rgba(0, 0, 0, .25);
+      border-bottom-width: 0
+    }
+
+    .popover.top>.arrow:after {
+      bottom: 1px;
+      margin-left: -10px;
+      content: " ";
+      border-top-color: #fff;
+      border-bottom-width: 0
+    }
+
+    .popover.right>.arrow {
+      top: 50%;
+      left: -11px;
+      margin-top: -11px;
+      border-right-color: #999;
+      border-right-color: rgba(0, 0, 0, .25);
+      border-left-width: 0
+    }
+
+    .popover.right>.arrow:after {
+      bottom: -10px;
+      left: 1px;
+      content: " ";
+      border-right-color: #fff;
+      border-left-width: 0
+    }
+
+    .popover.bottom>.arrow {
+      top: -11px;
+      left: 50%;
+      margin-left: -11px;
+      border-top-width: 0;
+      border-bottom-color: #999;
+      border-bottom-color: rgba(0, 0, 0, .25)
+    }
+
+    .popover.bottom>.arrow:after {
+      top: 1px;
+      margin-left: -10px;
+      content: " ";
+      border-top-width: 0;
+      border-bottom-color: #fff
+    }
+
+    .popover.left>.arrow {
+      top: 50%;
+      right: -11px;
+      margin-top: -11px;
+      border-right-width: 0;
+      border-left-color: #999;
+      border-left-color: rgba(0, 0, 0, .25)
+    }
+
+    .popover.left>.arrow:after {
+      right: 1px;
+      bottom: -10px;
+      content: " ";
+      border-right-width: 0;
+      border-left-color: #fff
+    }
+
+
+
+    #anima-comment-popover,
+    #anima-code-popover {
+      background: #333333;
+      color: #fff;
+    }
+
+    #anima-comment-popover.top>.arrow,
+    #anima-comment-popover.top>.arrow:after,
+    #anima-code-popover.top>.arrow:after,
+    #anima-code-popover.top>.arrow {
+      border-top-color: #333;
+    }
+
+    #anima-comment-popover .btn,
+    #anima-code-popover .btn {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 6px 20px;
+      background: #FF6250;
+      color: #fff;
+      border-radius: 100px;
+      width: max-content;
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 550px) {
+      #anima-watermark-link {
+        padding: 6px !important;
+      }
+
+      #anima-watermark-link .text {
+        display: none !important;
+      }
+    }
+  </style>
+  <script id="anime-js-script" src="./splash-screen_files/anime.min.js"
+    integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
+  <script id="imgloaded-js-script" src="./splash-screen_files/imagesloaded.pkgd.min.js"></script>
+  <style data-emotion="css"></style>
+</head>
+
+<body style="margin: 0;background: #2b6777;" data-new-gr-c-s-check-loaded="14.1040.0" data-gr-ext-installed=""><input
+    type="hidden" id="anPageName" name="page" value="landing-page">
+  <div class="container-center-horizontal">
+    <div class="auto-animated screen splash-screen"
+      onclick="Lib.autoanim_redirect(&#39;splash-screen,landing-page%23landing-page,,ease-in,400.0000059604645&#39;, event)"
+      data-id="3:2" data-page="landing-page" data-screens="splash-screen,landing-page" style="opacity: 1;">
+      <div class="navigation-bar-C61RwL" data-id="21:8">
+        <div class="navigation-rectangle-2L5hEU" data-id="9:4"></div>
+        <div class="account-button-2L5hEU" onclick="Lib.autoanim_redirect(&#39;%2A,accounts-page,,,&#39;, event)"
+          data-id="17:4">
+          <div class="account-gtoBTx" data-id="17:5">Account</div>
+          <div class="solid-communication-user-gtoBTx" data-id="17:8"></div>
+        </div>
+        <div class="funds-button-2L5hEU" onclick="Lib.autoanim_redirect(&#39;%2A,funds,,,&#39;, event)" data-id="13:20">
+          <div class="funds-dxEZtx" data-id="13:21">Funds</div>
+          <div class="funds-1-dxEZtx" data-id="21:7"></div>
+        </div>
+        <div class="portfolio-button-2L5hEU" onclick="Lib.autoanim_redirect(&#39;%2A,portfolio-page,,,&#39;, event)"
+          data-id="13:11">
+          <div class="portfolio-q9lLuL" data-id="13:12">Portfolio</div>
+          <div class="solid-general-bag-q9lLuL" data-id="13:18"></div>
+        </div>
+        <div class="watchlist-button-2L5hEU" data-id="13:10">
+          <div class="watchlist-RVAxnp" data-id="13:9">Watchlist</div>
+          <div class="solid-status-eye-RVAxnp" data-id="13:7"></div>
+        </div>
+      </div>
+      <div class="search-bar-C61RwL" data-id="13:4">
+        <div class="search-rectangle-raZGPH" data-id="11:16"></div>
+        <div class="search-raZGPH" data-id="11:17">Search</div>
+        <div class="search-icon-raZGPH" data-id="13:2"></div>
+        <div class="search-button-raZGPH" data-id="13:5"></div>
+      </div>
+      <div class="stocks-scroll-C61RwL" data-id="86:100">
+        <div class="stocks-2NxadM" data-id="86:99">
+          <div class="huawei-yYGd1j" data-id="84:81">
+            <div class="rectangle-2-yCje92" data-id="84:82"></div>
+            <div class="vector-9-yCje92" data-id="84:84"></div>
+            <div class="x320975-yCje92 valign-text-middle" data-id="84:85">$3,209.75</div>
+            <div class="x1877-yCje92 valign-text-middle" data-id="84:86">-18.77%</div>
+            <div class="huawei-yCje92" data-id="32:45">Huawei</div>
+            <div class="huawei-icon-yCje92" data-id="32:784"></div>
+          </div>
+          <div class="nike-yYGd1j" data-id="84:91">
+            <div class="rectangle-1-4HxbnA" data-id="84:92"></div>
+            <div class="vector-3-4HxbnA" data-id="84:94"></div>
+            <div class="x112915-4HxbnA valign-text-middle" data-id="84:95">$1,129.15</div>
+            <div class="x1277-4HxbnA valign-text-middle" data-id="84:96">+12.77%</div>
+            <div class="nike-4HxbnA" data-id="32:52">Nike</div>
+            <div class="vector-4HxbnA" data-id="32:108"></div>
+          </div>
+          <div class="kfc-yYGd1j" data-id="84:44">
+            <div class="rectangle-4-OBDhn1" data-id="84:45"></div>
+            <div class="x160065-OBDhn1 valign-text-middle" data-id="84:46">$1,600.65</div>
+            <div class="x543-OBDhn1 valign-text-middle" data-id="84:47">-5.43%</div>
+            <div class="vector-9-OBDhn1" data-id="84:48"></div>
+            <div class="kfc-OBDhn1" data-id="32:58">KFC</div>
+            <div class="kfc-icon-OBDhn1" data-id="32:106"></div>
+          </div>
+          <div class="mastercard-yYGd1j" data-id="84:53">
+            <div class="rectangle-3-aubou2" data-id="84:54"></div>
+            <div class="x250975-aubou2 valign-text-middle" data-id="84:55">$2,509.75</div>
+            <div class="x977-aubou2 valign-text-middle" data-id="84:56">+9.77%</div>
+            <div class="vector-9-aubou2" data-id="84:57"></div>
+            <div class="mastercard-aubou2" data-id="32:65">Mastercard</div>
+            <div class="mc-icon-aubou2" data-id="32:88"></div>
+          </div>
+          <div class="volkswagen-yYGd1j" data-id="84:63">
+            <div class="rectangle-2-0xQXUE" data-id="84:64"></div>
+            <div class="vector-9-0xQXUE" data-id="84:66"></div>
+            <div class="x132915-0xQXUE valign-text-middle" data-id="84:67">$1,329.15</div>
+            <div class="x777-0xQXUE valign-text-middle" data-id="84:68">-7.77%</div>
+            <div class="volkswagen-0xQXUE" data-id="32:72">Volkswagen</div>
+            <div class="volkswagen-VBml01" data-id="32:79"></div>
+          </div>
+          <div class="mc-donalds-yYGd1j" data-id="84:73">
+            <div class="rectangle-1-XSp1Wl" data-id="84:74"></div>
+            <div class="vector-3-XSp1Wl" data-id="84:76"></div>
+            <div class="x150975-XSp1Wl valign-text-middle" data-id="84:77">$1,509.75</div>
+            <div class="x877-XSp1Wl valign-text-middle" data-id="84:78">+8.77%</div>
+            <div class="mc-donalds-XSp1Wl" data-id="32:37">McDonald’s</div>
+            <div class="mc-donalds-icon-XSp1Wl" data-id="32:28"></div>
+          </div>
+          <div class="tesla-yYGd1j" data-id="84:43">
+            <div class="rectangle-4-xM1TBp" data-id="27:5"></div>
+            <div class="x250975-xM1TBp valign-text-middle" data-id="84:41">$2,509.75</div>
+            <div class="x1077-xM1TBp valign-text-middle" data-id="84:42">-10.77%</div>
+            <div class="vector-9-xM1TBp" data-id="84:40"></div>
+            <div class="tesla-xM1TBp" data-id="32:36">Tesla</div>
+            <div class="tesla-icon-xM1TBp" data-id="32:27"></div>
+          </div>
+          <div class="instagram-yYGd1j" data-id="84:39">
+            <div class="rectangle-3-Go7lQy" data-id="27:4"></div>
+            <div class="x154375-Go7lQy valign-text-middle" data-id="84:37">$1,543.75</div>
+            <div class="x1043-Go7lQy valign-text-middle" data-id="84:38">+10.43%</div>
+            <div class="vector-9-Go7lQy" data-id="84:36"></div>
+            <div class="instagram-Go7lQy" data-id="32:35">Instagram</div>
+            <div class="instagram-icon-Go7lQy" data-id="32:32"></div>
+          </div>
+          <div class="shell-yYGd1j" data-id="84:35">
+            <div class="rectangle-2-1R1PSi" data-id="27:3"></div>
+            <div class="shell-1R1PSi" data-id="32:34">Shell</div>
+            <div class="vector-9-1R1PSi" data-id="84:32"></div>
+            <div class="x301050-1R1PSi valign-text-middle" data-id="84:33">$3,010.50</div>
+            <div class="x2015-1R1PSi valign-text-middle" data-id="84:34">-20.15%</div>
+            <div class="shell-icon-1R1PSi" data-id="29:14"></div>
+          </div>
+          <div class="apple-yYGd1j" onclick="Lib.autoanim_redirect(&#39;%2A,stock-detail-page,,,&#39;, event)"
+            data-id="84:27">
+            <div class="rectangle-1-ChO6aT" data-id="26:2"></div>
+            <div class="apple-ChO6aT" data-id="32:33">Apple</div>
+            <div class="vector-3-ChO6aT" data-id="84:24"></div>
+            <div class="x250975-ChO6aT valign-text-middle" data-id="84:25">$2,509.75</div>
+            <div class="x977-ChO6aT valign-text-middle" data-id="84:26">+9.77%</div>
+            <div class="apple-icon-ChO6aT" data-id="29:7"></div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-button-C61RwL" data-id="9:5"></div>
+      <div class="u-mass-highly-r-ted-trading-app-C61RwL valign-text-middle" data-id="45:1142">UMass Highly Rated
+        Trading App</div>
+      <div class="u-mass-highly-r-ted-trading-app-VMr6Om valign-text-middle" data-id="78:55">Tap to start</div>
+      <div class="swipe-handle-C61RwL" data-id="45:1143">
+        <div class="swipe-handle-x8PqoV" data-id="I45:1143;45:58"></div>
+      </div>
+      <div class="logo-C61RwL" data-id="52:3045"></div>
+    </div>
+  </div>
+  <script defer="" src="./splash-screen_files/restart-btn.min.js"></script>
+  <div id="anima-interface" data-turbolinks-permanent="true" class="idle">
+    <!---->
+    <div id="anima-comment-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
+      <div class="arrow" style="margin-left: 128px;"></div>
+      <div class="popover-content" style="align-items:center">
+        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
+          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
+            Leave feedback and collaborate
+          </h3>
+          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
+            Login to your account to leave comments. Don’t have an account
+            already? Ask for access first.
+          </p>
+          <a target="_blank" rel="noopener noreferrer" class="btn"
+            href="https://projects.animaapp.com/p/undefined/s/landing-page?mode=comments&amp;utm_campaign=add-comment&amp;utm_source=animaapp.io">Add
+            comment</a>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:center;padding-right:20px">
+          <img src="./splash-screen_files/comment-illustration.svg">
+        </div>
+      </div>
+    </div>
+    <div id="anima-code-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
+      <div class="arrow" style="margin-left: 168px;"></div>
+      <div class="popover-content" style="align-items:center">
+        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
+          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
+            Get clean code you’ll love with Anima
+          </h3>
+          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
+            Login and easily export HTML, React or Vue of this prototype.
+            Don’t have an account? Just ask for access.
+          </p>
+          <a target="_blank" rel="noopener noreferrer" class="btn"
+            href="https://projects.animaapp.com/p/undefined/s/landing-page?mode=code&amp;utm_campaign=get-code&amp;utm_source=animaapp.io">
+            Get code
+          </a>
+        </div>
+
+        <img src="./splash-screen_files/code-illustration.svg">
+      </div>
+    </div>
+    <div class="omniview-anima-action-links" id="actions-wrap">
+      <div class="omniview-anima-action-links">
+        <div id="page-nav" class="link navigation" style="display: none;">
+          <svg id="homepage-icon" class="home-icon" width="24" height="24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8.151 11a.25.25 0 01-.167-.436l4.349-3.913a.25.25 0 01.334 0l4.349 3.913a.25.25 0 01-.167.436H8.15zM16 12H9v4a1 1 0 001 1h5a1 1 0 001-1v-4z"
+              fill="#fff"></path>
+          </svg>
+
+          <svg class="icon" id="arrow-left" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+
+          <span id="page-num"></span>
+
+          <svg class="icon" id="arrow-right" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+
+        <a class="link" id="comment-link" target="_blank" style="display: none;">
+          <span class="text">Comment</span>
+          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M4.301 15.137a.551.551 0 01.199-.55c.314-.23.554-.554.718-.965A6.015 6.015 0 014 10 6.006 6.006 0   0110.001 4 6.006 6.006 0 0116 10.001 6.006 6.006 0 019.999 16a5.98 5.98 0 01-3.095-.86 3.165 3.165 0 01-1.65.438 3.6  3.6 0 01-.57-.044c-.191-.03-.34-.186-.383-.397z"
+              fill="#fff"></path>
+          </svg>
+        </a>
+
+        <a class="link" id="code-link" target="_blank" style="display: none;">
+          <span class="text">Get Code</span>
+          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 15.667a1 1 0 01-.707-1.708l3.626-3.625-3.626-3.626a1 1 0 111.415-1.415l4.333 4.333a1 1 0 010 1.414l-4.333 4.333a.993.993 0 01-.707.294zM7.333 5a1 1 0 01.707 1.708l-3.626 3.625 3.627 3.626a1 1 0 11-1.415 1.415L2.293 11.04a1 1 0 010-1.415l4.333-4.333A.992.992 0 017.333 5z"
+              fill="#fff"></path>
+          </svg>
+        </a>
+
+        <div class="restart" id="restart-btn" style="display: none;">
+          <svg style="margin-right: 6px" width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6 11.817A5.017 5.017 0 01.994 6.811c0-.207.169-.375.375-.375s.375.168.375.375A4.265 4.265 0 006 11.067a4.265 4.265 0 004.256-4.256A4.265 4.265 0 006 2.555a.376.376 0 01-.375-.376c0-.206.169-.374.375-.374a5.017 5.017 0 015.006 5.006A5.017 5.017 0 016 11.817z"
+              fill="#fff"></path>
+            <path
+              d="M6.75 4.237a.37.37 0 01-.263-.112l-1.65-1.65a.363.363 0 010-.525L6.487.3c.15-.15.375-.15.525 0 .15.15.15.375 0 .525L5.625 2.212 7.012 3.6c.15.15.15.375 0 .525-.056.075-.15.112-.262.112z"
+              fill="#fff"></path>
+          </svg>
+          Restart
+        </div>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <div id="anima-watermark" style="display: flex;">
+    <!----><a id="anima-watermark-link" target="_blank"
+      href="https://www.animaapp.com/?utm_campaign=public-link-banner&amp;utm_source=animaapp.io"
+      style="right: 20px; left: auto; padding: 8px 16px 8px 11px;">
+      <svg width="20" height="20" viewBox="0 0 20 20" id="anima-logo-icon" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M4.09293 3.00001H16.5327C16.5484 2.99976 16.5638 3.00351 16.5776 3.01092C16.5913 3.01832 16.603 3.02913 16.6114 3.04231C16.6198 3.0555 16.6247 3.07061 16.6256 3.08622C16.6265 3.10182 16.6233 3.1174 16.6165 3.13146C15.5441 5.29706 13.9276 7.14699 11.9253 8.50009C8.69117 10.6822 5.43436 10.9075 4.09389 10.9196C4.08165 10.9198 4.06949 10.9176 4.05811 10.9131C4.04672 10.9086 4.03636 10.9019 4.02761 10.8933C4.01887 10.8848 4.01192 10.8745 4.00718 10.8633C4.00244 10.852 4 10.8399 4 10.8276V3.09198C4 3.07982 4.00241 3.06778 4.00709 3.05656C4.01177 3.04534 4.01863 3.03516 4.02728 3.02661C4.03592 3.01805 4.04617 3.0113 4.05744 3.00673C4.06871 3.00217 4.08077 2.99988 4.09293 3.00001Z"
+          fill="#FF6250"></path>
+        <path
+          d="M6.77772 17.4446C8.31182 17.4446 9.55545 16.201 9.55545 14.6669C9.55545 13.1328 8.31182 11.8892 6.77772 11.8892C5.24363 11.8892 4 13.1328 4 14.6669C4 16.201 5.24363 17.4446 6.77772 17.4446Z"
+          fill="#FFDF90"></path>
+        <path
+          d="M12.4559 17.2799C11.6701 16.9799 11.2522 16.1151 11.5185 15.3496L13.6153 9.3656C13.884 8.60003 14.7387 8.22302 15.5245 8.52299C16.3103 8.82344 16.7282 9.68772 16.4619 10.4538L14.365 16.4377C14.0964 17.2033 13.2417 17.5808 12.4559 17.2799Z"
+          fill="#3366FF"></path>
+      </svg>
+      <span class="text" style="display: inline;">Made with Anima</span>
+    </a>
+    <!---->
+  </div>
+  <div id="923e81a1-0319-4b55-8eb9-af14224bc419-quickmenu"></div>
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
