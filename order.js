@@ -110,7 +110,10 @@ function setHandle(percent) {
 }
 
 function updateMargin(quantity) {
-	if (typeof quantity != 'number') quantity = Math.floor((availableFunds * (riskExposure / 100)) / stockPrice);
+	if (typeof quantity != 'number') {
+		quantity = Math.floor((availableFunds * (riskExposure / 100)) / stockPrice);
+		if (quantity == 0) quantity = 1;
+	}
 	window.localStorage.setItem('quantity', quantity);
 
 	if (orderSize == 'quantity') {
@@ -127,7 +130,7 @@ function _moveHandle(e) {
 	handle.style.left = (e.offsetX - 5) + 'px';
 	riskExposure = Math.round(e.offsetX * 100 / e.target.clientWidth);
 	riskExposure = riskExposure > 98 ? 100 : riskExposure;
-	riskExposure = riskExposure < 3 ? 0 : riskExposure;
+	riskExposure = riskExposure < 3 ? 1 : riskExposure;
 	updateMargin();
 }
 
