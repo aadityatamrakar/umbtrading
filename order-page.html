@@ -94,7 +94,7 @@
       transform: none !important;
     }
   </style>
-  <script id="anima-hotspots-script" src="./order-page_files/hotspots.js"></script>
+  <!-- <script id="anima-hotspots-script" src="./order-page_files/hotspots.js"></script> -->
   <style id="hotspots-styles">
     .hotspot {
       position: absolute;
@@ -1188,8 +1188,7 @@
       width: 40px;
     }
   </style>
-  <script id="anime-js-script" src="./order-page_files/anime.min.js"
-    integrity="sha256-98Q574VkbV+PkxXCKSgL6jVq9mrVbS7uCdA+vt0sLS8=" crossorigin="anonymous"></script>
+  <script id="anime-js-script" src="./order-page_files/anime.min.js" crossorigin="anonymous"></script>
   <script id="imgloaded-js-script" src="./order-page_files/imagesloaded.pkgd.min.js"></script>
   <style id="action-links-styles">
     @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
@@ -1840,7 +1839,7 @@
       background-color: transparent;
       color: #ffffffd4;
       font-family: var(--font-family-ubuntu);
-      font-size: 40px;
+      font-size: 32px;
       font-style: normal;
       font-weight: 400;
       height: 46px;
@@ -1910,11 +1909,12 @@
       border: 0.5px solid var(--botticelli);
       border-radius: 12px;
       height: 55px;
-      left: 246px;
+      left: 0px;
       mix-blend-mode: normal;
       position: absolute;
       top: -0px;
       width: 9px;
+      transition: left 1s;
     }
 
     .order-page .group-96-HyhBno {
@@ -1996,27 +1996,29 @@
     .order-page .available-funds-15000-wkvuW5 {
       background-color: transparent;
       height: 28px;
-      left: 78px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
       text-align: left;
       top: 710px;
-      width: auto;
+      width: 100%;
+      text-align: center;
     }
 
     .order-page .margin-required-10100-wkvuW5 {
       background-color: transparent;
       height: 28px;
-      left: 81px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
       text-align: left;
       top: 571px;
-      width: auto;
+      width: 100%;
+      text-align: center;
     }
 
     .order-page .group-97-wkvuW5 {
@@ -2045,14 +2047,14 @@
       font-style: normal;
       font-weight: 400;
       height: 62px;
-      left: 102px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
-      text-align: left;
+      text-align: center;
       top: 0px;
-      width: auto;
+      width: 100%;
     }
 
     .order-page .group-102-3oJKxx {
@@ -2087,6 +2089,7 @@
     }
 
     .order-page .quantity-LTRlWq {
+      cursor: pointer;
       background-color: transparent;
       color: var(--casal);
       font-family: var(--font-family-ubuntu);
@@ -2105,6 +2108,7 @@
     }
 
     .order-page .amount-LTRlWq {
+      cursor: pointer;
       background-color: transparent;
       color: var(--casal);
       font-family: var(--font-family-ubuntu);
@@ -2112,7 +2116,7 @@
       font-style: normal;
       font-weight: 400;
       height: 25px;
-      left: 149px;
+      left: 160px;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
@@ -2141,6 +2145,227 @@
       top: 26px;
       width: 238px;
     }
+
+
+    @keyframes shake-horizontal {
+      2% {
+        transform: translate(-5px, 0) rotate(0)
+      }
+
+      4% {
+        transform: translate(8px, 0) rotate(0)
+      }
+
+      6% {
+        transform: translate(8px, 0) rotate(0)
+      }
+
+      8% {
+        transform: translate(9px, 0) rotate(0)
+      }
+
+      10% {
+        transform: translate(-7px, 0) rotate(0)
+      }
+
+      12% {
+        transform: translate(1px, 0) rotate(0)
+      }
+
+      14% {
+        transform: translate(-4px, 0) rotate(0)
+      }
+
+      16% {
+        transform: translate(7px, 0) rotate(0)
+      }
+
+      18% {
+        transform: translate(8px, 0) rotate(0)
+      }
+
+      20% {
+        transform: translate(-7px, 0) rotate(0)
+      }
+
+      22% {
+        transform: translate(9px, 0) rotate(0)
+      }
+
+      24% {
+        transform: translate(8px, 0) rotate(0)
+      }
+
+      26% {
+        transform: translate(-2px, 0) rotate(0)
+      }
+
+      28% {
+        transform: translate(5px, 0) rotate(0)
+      }
+
+      30% {
+        transform: translate(6px, 0) rotate(0)
+      }
+
+      32% {
+        transform: translate(4px, 0) rotate(0)
+      }
+
+      34% {
+        transform: translate(3px, 0) rotate(0)
+      }
+
+      36% {
+        transform: translate(7px, 0) rotate(0)
+      }
+
+      38% {
+        transform: translate(-1px, 0) rotate(0)
+      }
+
+      40% {
+        transform: translate(3px, 0) rotate(0)
+      }
+
+      42% {
+        transform: translate(10px, 0) rotate(0)
+      }
+
+      44% {
+        transform: translate(3px, 0) rotate(0)
+      }
+
+      46% {
+        transform: translate(-9px, 0) rotate(0)
+      }
+
+      48% {
+        transform: translate(6px, 0) rotate(0)
+      }
+
+      50% {
+        transform: translate(-8px, 0) rotate(0)
+      }
+
+      52% {
+        transform: translate(6px, 0) rotate(0)
+      }
+
+      54% {
+        transform: translate(1px, 0) rotate(0)
+      }
+
+      56% {
+        transform: translate(5px, 0) rotate(0)
+      }
+
+      58% {
+        transform: translate(-4px, 0) rotate(0)
+      }
+
+      60% {
+        transform: translate(3px, 0) rotate(0)
+      }
+
+      62% {
+        transform: translate(-5px, 0) rotate(0)
+      }
+
+      64% {
+        transform: translate(7px, 0) rotate(0)
+      }
+
+      66% {
+        transform: translate(-8px, 0) rotate(0)
+      }
+
+      68% {
+        transform: translate(-2px, 0) rotate(0)
+      }
+
+      70% {
+        transform: translate(-5px, 0) rotate(0)
+      }
+
+      72% {
+        transform: translate(1px, 0) rotate(0)
+      }
+
+      74% {
+        transform: translate(1px, 0) rotate(0)
+      }
+
+      76% {
+        transform: translate(-9px, 0) rotate(0)
+      }
+
+      78% {
+        transform: translate(6px, 0) rotate(0)
+      }
+
+      80% {
+        transform: translate(8px, 0) rotate(0)
+      }
+
+      82% {
+        transform: translate(10px, 0) rotate(0)
+      }
+
+      84% {
+        transform: translate(-6px, 0) rotate(0)
+      }
+
+      86% {
+        transform: translate(-1px, 0) rotate(0)
+      }
+
+      88% {
+        transform: translate(5px, 0) rotate(0)
+      }
+
+      90% {
+        transform: translate(-1px, 0) rotate(0)
+      }
+
+      92% {
+        transform: translate(7px, 0) rotate(0)
+      }
+
+      94% {
+        transform: translate(-3px, 0) rotate(0)
+      }
+
+      96% {
+        transform: translate(-7px, 0) rotate(0)
+      }
+
+      98% {
+        transform: translate(-4px, 0) rotate(0)
+      }
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0)
+      }
+    }
+
+
+    .noselect {
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Old versions of Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">
@@ -2151,149 +2376,53 @@
 <body style="margin: 0;background: #2b6777;"><input type="hidden" id="anPageName" name="page" value="order-page">
   <div class="container-center-horizontal">
     <div class="order-page screen " data-id="52:2997">
-      <div class="apple-wkvuW5 valign-text-middle" data-id="52:3015">Apple</div><a
+      <div id="stock_name" class="apple-wkvuW5 valign-text-middle" data-id="52:3015">Apple</div><a
         href="./order-confirmation-page.html">
         <div class="place-button-wkvuW5" data-id="84:22" data-hotspot-id="hp-0">
-          <div class="rectangle-59-uCPg44" data-id="59:503"></div>
-          <div class="place-uCPg44 valign-text-middle" data-id="59:504">Place</div>
+          <div id="placeBtn" class="rectangle-59-uCPg44" data-id="59:503"></div>
+          <div id="placeBtnText" class="place-uCPg44 valign-text-middle" data-id="59:504">Place</div>
         </div>
       </a><a href="./stock-detail-page.html">
         <div class="cancel-button-wkvuW5" data-id="52:3261" data-hotspot-id="hp-1">
           <div class="cancel-f8l8Bf ubuntu-normal-botticelli-24px" data-id="52:3263">Cancel</div>
         </div>
       </a>
-      <div class="apple-watchlist-group-wkvuW5" data-id="52:3288">
-        <div class="slider-group-HyhBno" data-id="52:3287"><img class="rectangle-60-u1NhTD" data-id="52:3269"
+      <div class="apple-watchlist-group-wkvuW5 noselect" data-id="52:3288">
+        <div class="slider-group-HyhBno noselect" data-id="52:3287" style="z-index: 99; cursor: pointer; ">
+          <img id="risk_range" class="rectangle-60-u1NhTD" data-id="52:3269"
             src="./order-page_files/rectangle-60@2x.svg">
-          <div class="rectangle-61-u1NhTD" data-id="52:3270"></div>
+          <div id="risk_handle" class="rectangle-61-u1NhTD" data-id="52:3270"></div>
         </div>
         <div class="group-96-HyhBno" data-id="52:3271">
-          <div class="x505-TkGRId abeezee-normal-botticelli-24px" data-id="52:3272">$ 505</div>
+          <div id="stock_price" class="x505-TkGRId abeezee-normal-botticelli-24px" data-id="52:3272">$ 505</div>
           <div class="current-price-TkGRId" data-id="52:3273">Current Price</div>
           <div class="low-risk-TkGRId" data-id="52:3274">Low Risk</div>
           <div class="high-risk-TkGRId" data-id="52:3275">High Risk</div>
         </div>
       </div>
-      <div class="available-funds-15000-wkvuW5 valign-text-middle ubuntu-normal-botticelli-24px" data-id="52:3284">
+      <div id="available_funds" class="available-funds-15000-wkvuW5 valign-text-middle ubuntu-normal-botticelli-24px"
+        data-id="52:3284">
         Available funds: $ 15,000</div>
-      <div class="margin-required-10100-wkvuW5 valign-text-middle ubuntu-normal-botticelli-24px" data-id="52:3285">
+      <div id="margin_required" class="margin-required-10100-wkvuW5 valign-text-middle ubuntu-normal-botticelli-24px"
+        data-id="52:3285">
         Margin Required: 10,100</div>
       <div class="group-97-wkvuW5" data-id="52:3286"><img class="line-6-3oJKxx" data-id="52:3277"
           src="./order-page_files/line-6@2x.svg">
-        <div class="x20-3oJKxx valign-text-middle" data-id="52:3279">20</div>
+        <div id="orderQuantity" style="cursor: arrow;" class="x20-3oJKxx noselect valign-text-middle" data-id="52:3279">
+          20</div>
         <div class="group-102-3oJKxx" data-id="78:62"><img class="rectangle-62-LTRlWq" data-id="78:59"
             src="./order-page_files/rectangle-62@2x.svg">
-          <div class="rectangle-63-LTRlWq" data-id="78:61"></div>
-          <div class="quantity-LTRlWq valign-text-middle" data-id="52:3280">Quantity</div>
-          <div class="amount-LTRlWq valign-text-middle" data-id="52:3282">Amount</div>
+          <div id="quantityType" class="rectangle-63-LTRlWq" data-id="78:61"></div>
+          <div id="orderByQuantity" class="quantity-LTRlWq valign-text-middle" data-id="52:3280">Quantity</div>
+          <div id="orderByAmount" class="amount-LTRlWq valign-text-middle" data-id="52:3282">Amount</div>
         </div>
-      </div><img class="menu-button-wkvuW5" data-id="52:3013" src="./order-page_files/menu-button@2x.png"><img
-        class="logo-wkvuW5" data-id="52:3014" src="./order-page_files/logo-1@2x.png">
+      </div>
+      <!-- <img class="menu-button-wkvuW5" data-id="52:3013" src="./order-page_files/menu-button@2x.png"> -->
+      <img class="logo-wkvuW5" data-id="52:3014" src="./order-page_files/logo-1@2x.png">
     </div>
   </div>
   <script defer="" src="./order-page_files/restart-btn.min.js"></script>
-  <div id="anima-interface" data-turbolinks-permanent="true">
-    <!---->
-    <div id="anima-comment-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
-      <div class="arrow" style="margin-left: 128px;"></div>
-      <div class="popover-content" style="align-items:center">
-        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
-          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
-            Leave feedback and collaborate
-          </h3>
-          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
-            Login to your account to leave comments. Don’t have an account
-            already? Ask for access first.
-          </p>
-          <a target="_blank" rel="noopener noreferrer" class="btn"
-            href="https://projects.animaapp.com/p/undefined/s/order-page?mode=comments&amp;utm_campaign=add-comment&amp;utm_source=animaapp.io">Add
-            comment</a>
-        </div>
-
-        <div style="display:flex;align-items:center;justify-content:center;padding-right:20px">
-          <img src="./order-page_files/comment-illustration.svg">
-        </div>
-      </div>
-    </div>
-    <div id="anima-code-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
-      <div class="arrow" style="margin-left: 168px;"></div>
-      <div class="popover-content" style="align-items:center">
-        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
-          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
-            Get clean code you’ll love with Anima
-          </h3>
-          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
-            Login and easily export HTML, React or Vue of this prototype.
-            Don’t have an account? Just ask for access.
-          </p>
-          <a target="_blank" rel="noopener noreferrer" class="btn"
-            href="https://projects.animaapp.com/p/undefined/s/order-page?mode=code&amp;utm_campaign=get-code&amp;utm_source=animaapp.io">
-            Get code
-          </a>
-        </div>
-
-        <img src="./order-page_files/code-illustration.svg">
-      </div>
-    </div>
-    <div class="omniview-anima-action-links" id="actions-wrap">
-      <div class="omniview-anima-action-links">
-        <div id="page-nav" class="link navigation" style="display: none;">
-          <svg id="homepage-icon" class="home-icon" width="24" height="24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M8.151 11a.25.25 0 01-.167-.436l4.349-3.913a.25.25 0 01.334 0l4.349 3.913a.25.25 0 01-.167.436H8.15zM16 12H9v4a1 1 0 001 1h5a1 1 0 001-1v-4z"
-              fill="#fff"></path>
-          </svg>
-
-          <svg class="icon" id="arrow-left" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-
-          <span id="page-num"></span>
-
-          <svg class="icon" id="arrow-right" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-
-        <a class="link" id="comment-link" target="_blank" style="display: none;">
-          <span class="text">Comment</span>
-          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M4.301 15.137a.551.551 0 01.199-.55c.314-.23.554-.554.718-.965A6.015 6.015 0 014 10 6.006 6.006 0   0110.001 4 6.006 6.006 0 0116 10.001 6.006 6.006 0 019.999 16a5.98 5.98 0 01-3.095-.86 3.165 3.165 0 01-1.65.438 3.6  3.6 0 01-.57-.044c-.191-.03-.34-.186-.383-.397z"
-              fill="#fff"></path>
-          </svg>
-        </a>
-
-        <a class="link" id="code-link" target="_blank" style="display: none;">
-          <span class="text">Get Code</span>
-          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 15.667a1 1 0 01-.707-1.708l3.626-3.625-3.626-3.626a1 1 0 111.415-1.415l4.333 4.333a1 1 0 010 1.414l-4.333 4.333a.993.993 0 01-.707.294zM7.333 5a1 1 0 01.707 1.708l-3.626 3.625 3.627 3.626a1 1 0 11-1.415 1.415L2.293 11.04a1 1 0 010-1.415l4.333-4.333A.992.992 0 017.333 5z"
-              fill="#fff"></path>
-          </svg>
-        </a>
-
-        <div class="restart" id="restart-btn" style="display: none;">
-          <svg style="margin-right: 6px" width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M6 11.817A5.017 5.017 0 01.994 6.811c0-.207.169-.375.375-.375s.375.168.375.375A4.265 4.265 0 006 11.067a4.265 4.265 0 004.256-4.256A4.265 4.265 0 006 2.555a.376.376 0 01-.375-.376c0-.206.169-.374.375-.374a5.017 5.017 0 015.006 5.006A5.017 5.017 0 016 11.817z"
-              fill="#fff"></path>
-            <path
-              d="M6.75 4.237a.37.37 0 01-.263-.112l-1.65-1.65a.363.363 0 010-.525L6.487.3c.15-.15.375-.15.525 0 .15.15.15.375 0 .525L5.625 2.212 7.012 3.6c.15.15.15.375 0 .525-.056.075-.15.112-.262.112z"
-              fill="#fff"></path>
-          </svg>
-          Restart
-        </div>
-      </div>
-    </div>
-    <!---->
-  </div>
-  <div id="hotspots_wrapper">
-    <div class="hotspot" id="hp-0" style="width: 304px; height: 72px; top: 752px; left: 569px;"></div>
-    <div class="hotspot" id="hp-1" style="width: 219px; height: 28px; top: 844px; left: 611px;"></div>
-    <div class="hotspot" id="hp-2" style="top: 696px; left: 1279.55px;"></div>
-  </div>
-  <div id="t_preload_links"></div>
 </body>
+<script src="./order.js"></script>
+
 </html>
