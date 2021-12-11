@@ -1,0 +1,354 @@
+/* screen - create-account */
+
+.create-account {
+  align-items: flex-start;
+  background-color: var(--casal);
+  display: flex;
+  height: 926px;
+  min-width: 428px;
+  overflow-x: hidden;
+}
+
+.create-account .logo {
+  height: 172px;
+  left: 50%;
+  object-fit: cover;
+  position: fixed;
+  top: 26px;
+  width: 238px;
+  z-index: 9;
+  margin: 0 0 0 -245px;
+}
+
+.create-account .social-sign-up {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  min-height: 110px;
+  position: fixed;
+  top: 696px;
+  width: 357px;
+  z-index: 1;
+  margin: 0 0 0 -178px;
+}
+
+.create-account .frame-89 {
+  align-items: center;
+  display: flex;
+  height: 43px;
+  margin-top: 8px;
+  min-width: 357px;
+  padding: 0 10px;
+}
+
+.create-account .divider {
+  background-color: var(--botticelli);
+  height: 1px;
+  width: 150px;
+}
+
+.create-account .description {
+  color: var(--botticelli);
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 10px;
+  min-height: 23px;
+  min-width: 17px;
+}
+
+.create-account .divider-1 {
+  background-color: var(--botticelli);
+  height: 1px;
+  margin-left: 10px;
+  width: 150px;
+}
+
+.create-account .button {
+  align-items: center;
+  border: 1px solid var(--botticelli);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  margin-top: 12px;
+  overflow: hidden;
+  padding: 0 20px;
+  width: 357px;
+}
+
+.create-account .x18-google {
+  height: 18px;
+  width: 18px;
+}
+
+.create-account .text-1 {
+  color: var(--botticelli);
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-xl);
+  font-weight: 400;
+  height: 23px;
+  letter-spacing: 0;
+  margin-left: 4px;
+  text-align: center;
+  width: 273px;
+}
+
+.create-account .x18-arrow-right {
+  height: 1px;
+  margin-left: 13px;
+  width: 1px;
+}
+
+.create-account .email {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 77px;
+  left: 50%;
+  position: fixed;
+  top: 363px;
+  width: 357px;
+  z-index: 2;
+  margin: 0 0 0 -178px;
+}
+
+.create-account .textlabel {
+  letter-spacing: 0;
+  line-height: 24px;
+  min-height: 24px;
+  white-space: nowrap;
+}
+
+.create-account .text-block {
+  align-items: center;
+  background-color: var(--botticelli);
+  border-radius: 4px;
+  display: flex;
+  height: 48px;
+  margin-top: 2px;
+  min-width: 357px;
+  padding: 0 12px;
+}
+
+.create-account .text {
+  background-color: transparent;
+  border: 0;
+  height: 24px;
+  letter-spacing: 0.16px;
+  line-height: 24px;
+  padding: 0;
+  white-space: nowrap;
+  width: 333px;
+}
+
+.create-account .text::placeholder {
+  color: #2b677799;
+}
+
+.create-account .password {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 74px;
+  left: 50%;
+  overflow: hidden;
+  position: fixed;
+  top: 458px;
+  width: 357px;
+  z-index: 3;
+  margin: 0 0 0 -178px;
+}
+
+.create-account .textlabel-1 {
+  color: var(--botticelli);
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-l);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+  min-height: 24px;
+  white-space: nowrap;
+}
+
+.create-account .text-block-1 {
+  align-items: center;
+  background-color: var(--botticelli);
+  border-radius: 4px;
+  display: flex;
+  height: 48px;
+  margin-top: 2px;
+  min-width: 460px;
+  padding: 0 12px;
+}
+
+.create-account .text-2 {
+  background-color: transparent;
+  border: 0;
+  color: var(--casal);
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-l);
+  font-weight: 400;
+  height: 24px;
+  letter-spacing: 0.16px;
+  line-height: 24px;
+  padding: 0;
+  white-space: nowrap;
+  width: 400px;
+}
+
+.create-account .text-2::placeholder {
+  color: #2b677799;
+}
+
+.create-account .mdiremoveredeye {
+  height: 24px;
+  margin-left: 12px;
+  width: 24px;
+}
+
+.create-account .button-1 {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  height: 48px;
+  left: 50%;
+  min-width: 357px;
+  position: fixed;
+  top: 624px;
+  z-index: 4;
+  margin: 0 0 0 -178px;
+}
+
+.create-account .button-large-filled-enabled {
+  align-items: center;
+  background-color: var(--botticelli);
+  border-radius: 6px;
+  display: flex;
+  height: 48px;
+  overflow: hidden;
+  padding: 0 116px;
+  width: 357px;
+}
+
+.create-account .label {
+  align-items: flex-start;
+  display: flex;
+  width: 125px;
+}
+
+.create-account .label-1 {
+  color: var(--casal);
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  height: 24px;
+  letter-spacing: 0;
+  min-width: 125px;
+  text-align: center;
+}
+
+.create-account .lastname {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 77px;
+  left: 50%;
+  position: fixed;
+  top: 268px;
+  width: 357px;
+  z-index: 7;
+  margin: 0 0 0 -178px;
+}
+
+.create-account .first-name {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 77px;
+  left: 50%;
+  position: fixed;
+  top: 173px;
+  width: 357px;
+  z-index: 8;
+  margin: 0 0 0 -178px;
+}
+
+.create-account .check-box {
+  align-items: center;
+  display: flex;
+  height: 24px;
+  left: 50%;
+  position: fixed;
+  top: 582px;
+  width: 351px;
+  z-index: 5;
+  margin: 0 0 0 -164px;
+}
+
+.create-account .mdicheckboxoutlineblank {
+  height: 20px;
+  width: 24px;
+}
+
+.create-account .label-2 {
+  color: var(--botticelli);
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  height: 20px;
+  letter-spacing: 0;
+  line-height: 19.6px;
+  margin-left: 8px;
+  min-width: 178px;
+  white-space: nowrap;
+}
+
+.create-account .check-box-1 {
+  align-items: center;
+  display: flex;
+  height: 24px;
+  left: 50%;
+  position: fixed;
+  top: 550px;
+  width: 351px;
+  z-index: 6;
+  margin: 0 0 0 -164px;
+}
+
+.create-account .label-3 {
+  color: transparent;
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  height: 20px;
+  letter-spacing: 0;
+  line-height: 19.6px;
+  margin-left: 8px;
+  min-width: 220px;
+  white-space: nowrap;
+}
+
+.create-account .SignIn {
+  font-family: var(--font-family-ibm_plex_sans);
+  font-size: var(--font-size-m);
+  align-items: center;
+  display: flex;
+  height: 24px;
+  left: 50%;
+  position: fixed;
+  top: 685px;
+  width: 351px;
+  z-index: 6;
+  margin: 0 0 0 -159px;
+}
+
+.create-account .span0 {
+  color: var(--botticelli);
+}
+
+.create-account .span1 {
+  color: var(--botticelli);
+}
