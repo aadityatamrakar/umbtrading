@@ -28,7 +28,7 @@ div.outer-frame {
   left: 50%;
   margin: -463px 0 0 -214px;
   border-radius: 12px;
-  transform: scale(0.7);
+  /* transform: scale(0.7); */
 }
 
 div.frame {
