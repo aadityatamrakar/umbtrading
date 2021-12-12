@@ -17,10 +17,11 @@ const signUp = e => {
         localStorage.setItem('form_data', JSON.stringify(form_data));
         document.querySelector('form').reset();
         document.getElementById("Email").focus();
-        alert("Account Created.\n\nPlease Sign In using the link below.");
+        // alert("Account Created.\n\nPlease Sign In using the link below.");
+        window.location.href = "./landing-page.html";
     }
     else{
-        alert("Ooopppssss... Duplicate found!!!\nYou have already signed up");
+        alert("You account already exist, Try Sign In with same credentials.");
     }
     e.preventDefault();
 }

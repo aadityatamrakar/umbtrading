@@ -2538,6 +2538,7 @@
     }
 
     .accounts-page .total-pOiK0o {
+      cursor: pointer;
       background-color: transparent;
       height: 60px;
       left: 40px;
@@ -2618,14 +2619,15 @@
     .accounts-page .tony-stark-hyIWc9 {
       background-color: transparent;
       height: 21px;
-      left: 246px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
-      text-align: left;
+      text-align: right;
       top: 26px;
-      width: 88px;
+      right: 20px;
+      width: 100%;
     }
 
     .accounts-page .name-hyIWc9 {
@@ -2665,14 +2667,15 @@
     .accounts-page .tonystarkcom-uP9mUP {
       background-color: transparent;
       height: 21px;
-      left: 202px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
-      text-align: left;
+      text-align: right;
+      right: 20px;
       top: 23px;
-      width: 134px;
+      width: 100%;
     }
 
     .accounts-page .email-uP9mUP {
@@ -2685,7 +2688,7 @@
       position: absolute;
       text-align: left;
       top: 27px;
-      width: 46px;
+      width: auto;
     }
 
     .accounts-page .group-22-nOsK8c {
@@ -2712,14 +2715,15 @@
     .accounts-page .x551-xxx-x007-xVtiDU {
       background-color: transparent;
       height: 21px;
-      left: 224px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
-      text-align: left;
+      text-align: right;
       top: 27px;
-      width: 112px;
+      right:20px;
+      width: 100%;
     }
 
     .accounts-page .phone-number-xVtiDU {
@@ -2787,14 +2791,15 @@
       font-style: normal;
       font-weight: 400;
       height: auto;
-      left: 114px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
       text-align: center;
       top: 150px;
-      width: 120px;
+      width: 100%;
+      text-align: center;
     }
 
     .accounts-page .menu-button-pOiK0o {
@@ -2967,6 +2972,7 @@
 
     .accounts-page .pencil-button-pOiK0o {
       background-color: transparent;
+      display: none;
       height: 28px;
       left: 360px;
       position: absolute;
@@ -3003,7 +3009,7 @@
 <body style="margin: 0;background: #2b6777;"><input type="hidden" id="anPageName" name="page" value="accounts-page">
   <div class="container-center-horizontal">
     <div class="accounts-page screen " data-id="43:377">
-      <div class="total-pOiK0o" data-id="82:36">
+      <div onclick="logout()" class="total-pOiK0o" data-id="82:36">
         <div class="rectangle-32-Wv9R8p" data-id="82:37"></div>
         <div class="logout-Wv9R8p valign-text-middle" data-id="82:38">Logout</div>
       </div>
@@ -3011,29 +3017,30 @@
         <div class="group-101-1QUIxK" data-id="82:22">
           <div class="group-20-nOsK8c" data-id="82:23">
             <div class="rectangle-32-hyIWc9" data-id="82:24"></div>
-            <div class="tony-stark-hyIWc9 valign-text-middle ubuntu-normal-black-18px" data-id="82:25">Tony Stark</div>
+            <div id="first_name" class="tony-stark-hyIWc9 valign-text-middle ubuntu-normal-black-18px" data-id="82:25">Tony Stark</div>
             <div class="name-hyIWc9 valign-text-middle ubuntu-normal-black-18px" data-id="82:26">Name</div>
           </div>
           <div class="group-23-nOsK8c" data-id="82:27">
             <div class="rectangle-32-uP9mUP" data-id="82:28"></div>
-            <div class="tonystarkcom-uP9mUP valign-text-middle ubuntu-normal-black-18px" data-id="82:29">tony@stark.com
+            <div id="last_name" class="tonystarkcom-uP9mUP valign-text-middle ubuntu-normal-black-18px" data-id="82:29">tony@stark.com
             </div>
-            <div class="email-uP9mUP valign-text-middle ubuntu-normal-black-18px" data-id="82:30">Email</div>
+            <div class="email-uP9mUP valign-text-middle ubuntu-normal-black-18px" data-id="82:30">Last Name</div>
           </div>
           <div class="group-22-nOsK8c" data-id="82:31">
             <div class="rectangle-32-xVtiDU" data-id="82:32"></div>
-            <div class="x551-xxx-x007-xVtiDU valign-text-middle ubuntu-normal-black-18px" data-id="82:33">551-xxx-x007
+            <div id="email" class="x551-xxx-x007-xVtiDU valign-text-middle ubuntu-normal-black-18px" data-id="82:33">551-xxx-x007
             </div>
-            <div class="phone-number-xVtiDU valign-text-middle ubuntu-normal-black-18px" data-id="82:34">Phone Number
+            <div class="phone-number-xVtiDU valign-text-middle ubuntu-normal-black-18px" data-id="82:34">Email
             </div>
           </div>
         </div>
       </div>
       <div class="your-profile-pOiK0o ubuntu-normal-botticelli-24px" data-id="81:29">Your Profile</div>
       <div class="profile-card-pOiK0o" data-id="77:55">
-        <div class="rectangle-54-yCxEwT" data-id="43:417"></div><img class="ellipse-6-yCxEwT" data-id="43:429"
-          src="./accounts-page_files/ellipse-6@2x.svg">
-        <div class="tony-stark-yCxEwT" data-id="43:430">Tony Stark</div>
+        <div class="rectangle-54-yCxEwT" data-id="43:417"></div>
+        <!-- <img class="ellipse-6-yCxEwT" data-id="43:429" src="./accounts-page_files/ellipse-6@2x.svg"> -->
+        <img class="ellipse-6-yCxEwT" data-id="43:429" src="./accounts-page_files/profile.png">
+        <div id="user_name" class="tony-stark-yCxEwT" data-id="43:430">Tony Stark</div>
       </div><img class="menu-button-pOiK0o" data-id="43:393" src="./accounts-page_files/menu-button@2x.png"><img
         class="logo-pOiK0o" data-id="43:394" src="./accounts-page_files/logo-1@2x.png">
       <div class="navigation-bar-pOiK0o" data-id="52:3244">
@@ -3098,5 +3105,6 @@
     <div class="hotspot" id="hp-3" style="top: 696px; left: 1279.55px;"></div>
   </div>
   <div id="t_preload_links"></div>
+  <script src="account.js"></script>
 </body>
 </html>
