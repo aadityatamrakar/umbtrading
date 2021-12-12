@@ -20,6 +20,17 @@ function roundOff(amount) {
 	return String(parseInt(amount)).replace(/(\d)(?=(\d\d)+\d$)/g, "$1,")
 }
 
+function getQueryParams() {
+	var searchParams = window.location.search
+		.replace('?', '')
+		.split('&')
+		.reduce((obj, elm) => (elm = elm.split('='), obj[elm[0]] = elm[1], obj), {});
+		
+	stockName = searchParams.stock;
+	stockPrice = searchParams.price;
+	transactionType = searchParams.type;
+}
+
 function updateRequiredMargin(margin) {
 	if (margin) {
 		document.getElementById('margin_required').innerHTML = "Margin Required: $ " + roundOff(margin);
@@ -64,6 +75,7 @@ function onClickOrderByAmount(e) {
 }
 
 function init() {
+	getQueryParams();
 	updateStockName(stockName);
 	updateStockPrice(stockPrice);
 	updateAvailableMargin(availableFunds);

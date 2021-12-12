@@ -41,6 +41,8 @@ var stocks = [{
   }
 ];
 
+let stock_config = {};
+
 // Update stock details function
 function update_stock() {
 
@@ -58,12 +60,15 @@ function update_stock() {
       document.getElementById('prices').cells[1].textContent = stocks[i].prices[1];
 
       let stock_price = parseInt(stocks[i].prices[0].replace('$', ''));
-      updateBidAskTbl(stock_price);
+      update_bid_ask_tbl(stock_price);
+
+      stock_config.name = encodeURIComponent(stock);
+      stock_config.price = stock_price;
     }
   }
 };
 
-function updateBidAskTbl(price) {
+function update_bid_ask_tbl(price) {
   if (!price) price = 505;
   let total_bid_qty = 0,
     total_ask_qty = 0;
@@ -80,6 +85,10 @@ function updateBidAskTbl(price) {
   }
   document.getElementById('bidqty_total').innerHTML = total_bid_qty;
   document.getElementById('askqty_total').innerHTML = total_ask_qty;
+}
+
+function place_order(type) {
+  window.location.href = `order-page.html?stock=${stock_config.name}&price=${stock_config.price}&type=${type}`;
 }
 
 // Slider menu function
