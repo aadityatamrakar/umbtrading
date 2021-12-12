@@ -6,35 +6,42 @@ const signUp = e => {
 
     let form_data = JSON.parse(localStorage.getItem('form_data')) || [];
 
-    let exist = form_data.length && 
-        JSON.parse(localStorage.getItem('form_data')).some(data => 
-            data.firstname.toLowerCase() == firstname.toLowerCase() && 
+    let exist = form_data.length &&
+        JSON.parse(localStorage.getItem('form_data')).some(data =>
+            data.firstname.toLowerCase() == firstname.toLowerCase() &&
             data.lastname.toLowerCase() == lastname.toLowerCase()
         );
 
-    if(!exist){
-        form_data.push({ firstname, lastname, email, password });
+    if (!exist) {
+        let current_user = {
+            firstname,
+            lastname,
+            email,
+            password
+        };
+        form_data.push(current_user);
         localStorage.setItem('form_data', JSON.stringify(form_data));
+        localStorage.setItem('current_user', JSON.stringify(current_user));
         document.querySelector('form').reset();
         document.getElementById("Email").focus();
+
         // alert("Account Created.\n\nPlease Sign In using the link below.");
         window.location.href = "./landing-page.html";
-    }
-    else{
+    } else {
         alert("You account already exist, Try Sign In with same credentials.");
     }
     e.preventDefault();
 }
 
 function signIn(e) {
-    let email = document.getElementById('email').value, pwd = document.getElementById('pwd').value;
+    let email = document.getElementById('email').value,
+        pwd = document.getElementById('pwd').value;
     let form_data = JSON.parse(localStorage.getItem('form_data')) || [];
-    let exist = form_data.length && 
-    JSON.parse(localStorage.getItem('form_data')).some(data => data.email.toLowerCase() == email && data.pwd.toLowerCase() == pwd);
-    if(!exist){
+    let exist = form_data.length &&
+        JSON.parse(localStorage.getItem('form_data')).some(data => data.email.toLowerCase() == email && data.pwd.toLowerCase() == pwd);
+    if (!exist) {
         alert("Incorrect login credentials");
-    }
-    else{
+    } else {
         location.href = "/";
     }
     e.preventDefault();
