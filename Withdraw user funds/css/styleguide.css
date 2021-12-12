@@ -1,0 +1,69 @@
+:root { 
+  --black: #000000;
+  --cape-cod: #424347;
+  --mercury: #e5e5e5;
+  --pink-swan: #bbbbbb;
+  --white: #ffffff;
+  --wild-blue-yonder: #8688bc;
+ 
+  --font-size-l: 15.1px;
+  --font-size-m: 13px;
+  --font-size-s: 10px;
+  --font-size-xl: 16px;
+  --font-size-xxl: 18px;
+  --font-size-xxxl: 24.1px;
+  --font-size-xxxxl: 40px;
+ 
+  --font-family-brown-bold: "Brown-Bold", Helvetica;
+  --font-family-graphik-medium: "Graphik-Medium", Helvetica;
+  --font-family-graphik-regular: "Graphik-Regular", Helvetica;
+  --font-family-helvetica-regular: "Helvetica-Regular", Helvetica;
+  --font-family-ubuntu: "Ubuntu", Helvetica;
+}
+.helvetica-regular-normal-white-24-1px {
+  color: var(--white);
+  font-family: var(--font-family-helvetica-regular);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.graphik-regular-normal-pink-swan-13px {
+  color: var(--pink-swan);
+  font-family: var(--font-family-graphik-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.graphik-regular-normal-white-10px {
+  color: var(--white);
+  font-family: var(--font-family-graphik-regular);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.graphik-regular-normal-white-13px {
+  color: var(--white);
+  font-family: var(--font-family-graphik-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.graphik-medium-cape-cod-18px {
+  color: var(--cape-cod);
+  font-family: var(--font-family-graphik-medium);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.graphik-medium-cape-cod-16px {
+  color: var(--cape-cod);
+  font-family: var(--font-family-graphik-medium);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 500;
+}
