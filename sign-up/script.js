@@ -7,10 +7,12 @@ const signUp = e => {
     let form_data = JSON.parse(localStorage.getItem('form_data')) || [];
 
     let exist = form_data.length &&
-        JSON.parse(localStorage.getItem('form_data')).some(data =>
-            data.firstname.toLowerCase() == firstname.toLowerCase() &&
-            data.lastname.toLowerCase() == lastname.toLowerCase()
-        );
+        JSON.parse(localStorage.getItem('form_data')).some(data => {
+            if (data.email.toLowerCase() == email && data.password.toLowerCase() == password) {
+                localStorage.setItem('current_user', JSON.stringify(data));
+                return true;
+            } else return false;
+        });
 
     if (!exist) {
         let current_user = {
@@ -28,7 +30,8 @@ const signUp = e => {
         // alert("Account Created.\n\nPlease Sign In using the link below.");
         window.location.href = "./landing-page.html";
     } else {
-        alert("You account already exist, Try Sign In with same credentials.");
+        alert("You account already exist, Logging in using same credentials...");
+        window.location.href = "./landing-page.html";
     }
     e.preventDefault();
 }
