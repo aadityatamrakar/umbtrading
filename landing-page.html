@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/landing-page.css">
+    <script src = "JS/landing-page.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>landing-page</title>
+  </head>
+  <body>
+    <div class="outer-frame">
+      <div class="frame">
+        <!-- Logo -->
+        <img src="Icons/Logo_screens.png" class="logo-screen">
+        <!-- Search bar -->
+        <div class="search-bar">
+          <table align="center">
+            <tr>
+              <td><img src="Icons/search-icon.png" style="height:24px;width:24px;"></td>
+              <td><input id="search-value" type="text" placeholder="Search" style="height:38px;width:300px;"></td>
+              <td><img src="Icons/search-button.png" style="height:24px;width:24px;" onclick="show_result()"></td>
+            </tr>
+          </table>
+        </div>
+        <p class="error">Sorry! No results</p>
+        <p class="show-all" onclick="show_all()">Show all</p>
+        <!-- stocks scroll -->
+        <div class="stocks-scroll">
+          <table class="stock" id="apple">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Apple'" style="cursor:pointer;">
+              <td style="width:45px;"><img src="Icons/apple.png" style="width:25px;height:30px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Apple</td>
+              <td><img src="Icons/vector_1.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$2509.75</td>
+            </tr>
+          </table>
+          <table class="stock" id="shell">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Shell'" style="cursor:pointer;">
+              <td style="width:49px;"><img src="Icons/shell.png" style="width:29px;height:33px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Shell</td>
+              <td><img src="Icons/vector_2.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$3010.75</td>
+            </tr>
+          </table>
+          <table class="stock" id="instagram">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Instagram'" style="cursor:pointer;">
+              <td style="width:51px;"><img src="Icons/instagram.png" style="width:31px;height:31px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Instagram</td>
+              <td><img src="Icons/vector_3.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$1543.75</td>
+            </tr>
+          </table>
+          <table class="stock" id="tesla">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Tesla'" style="cursor:pointer;">
+              <td style="width:50px;"><img src="Icons/tesla.png" style="width:30px;height:31px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Tesla</td>
+              <td><img src="Icons/vector_4.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$2509.75</td>
+            </tr>
+          </table>
+          <table class="stock" id="mcd">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?McDonald%27s'" style="cursor:pointer;">
+              <td style="width:50px;"><img src="Icons/mcd.png" style="width:30px;height:30px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">McDonald's</td>
+              <td><img src="Icons/vector_1.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$1509.75</td>
+            </tr>
+          </table>
+          <table class="stock" id="vw">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Volkswagen'" style="cursor:pointer;">
+              <td style="width:51px;"><img src="Icons/volkswagen.png" style="width:31px;height:31px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Volkswagen</td>
+              <td><img src="Icons/vector_2.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$1329.15</td>
+            </tr>
+          </table>
+          <table class="stock" id="mc">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Mastercard'" style="cursor:pointer;">
+              <td style="width:55px;"><img src="Icons/mastercard.png" style="width:35px;height:27px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Mastercard</td>
+              <td><img src="Icons/vector_3.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$2509.75</td>
+            </tr>
+          </table>
+          <table class="stock" id="kfc">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?KFC'" style="cursor:pointer;">
+              <td style="width:51px;"><img src="Icons/kfc.png" style="width:31px;height:31px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">KFC</td>
+              <td><img src="Icons/vector_4.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$1600.65</td>
+            </tr>
+          </table>
+          <table class="stock" id="nike">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Nike'" style="cursor:pointer;">
+              <td style="width:55px;"><img src="Icons/nike.png" style="width:35px;height:12px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Nike</td>
+              <td><img src="Icons/vector_1.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$1129.15</td>
+            </tr>
+          </table>
+          <table class="stock" id="huawei">
+            <tr align="center" onclick="javascript:window.location.href='stock-details.html?Huawei'" style="cursor:pointer;">
+              <td style="width:55px;"><img src="Icons/huawei.png" style="width:35px;height:26px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">Huawei</td>
+              <td><img src="Icons/vector_2.png" style="width:50px;height:25px;"></td>
+              <td style="font-family: 'Ubuntu', sans-serif;font-size: 17px;">$3209.75</td>
+            </tr>
+          </table>
+        </div>
+        <!-- Navigation bar -->
+        <div class="nav-bar">
+          <table class="nav-icon">
+            <tr align="center">
+              <td><img src="Icons/watchlist1.png" style="width:42px;height:42px;"></td>
+              <td><img src="Icons/portfolio2.png" style="width:42px;height:42px;"></td>
+              <td><img src="Icons/funds2.png" style="width:38px;height:38px;"></td>
+              <td><img src="Icons/account2.png" style="width:42px;height:42px;"></td>
+            </tr>
+          </table>
+          <table class="nav-text">
+            <tr align="center">
+              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;color:#52ab98;">Watchlist</td>
+              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;">Portfolio</td>
+              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;">Funds</td>
+              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;">Account</td>
+            </tr>
+          </table>
+        </div>
+        <!-- hidden button -->
+        <input type="button" class="hidden-button" onclick="hide_sidebar()">
+        <!-- slide menu -->
+        <div id="sidebar">
+          <img src="Icons/menu_button.png" class="menu-button" onclick="show_menu()">
+          <p class="heading">Hello, user</p>
+          <div class="line"></div>
+          <ul>
+            <li>Sign-in</li>
+            <li>Sign-up</li>
+            <li>Watchlist</li>
+            <li>Portfolio</li>
+            <li>Funds</li>
+            <li>Account</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Frame button -->
+      <input type="button" class="frame-button" onclick="hide_sidebar()">
+    </div>
+  </body>
+</html>

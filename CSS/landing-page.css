@@ -1,0 +1,287 @@
+body {
+  background: #000;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+
+}
+
+input:focus {
+  outline: none;
+}
+
+div.outer-frame {
+  height: 926px;
+  width : 428px;
+  background: #2b6777;
+  /* overflow: hidden; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -463px 0 0 -214px;
+  border-radius: 12px;
+  transform: scale(0.7);
+}
+
+div.frame {
+  height: 926px;
+  width : 428px;
+  background: #2b6777;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -463px 0 0 -214px;
+  border-radius: 12px;
+}
+
+.logo-screen {
+  width: 238px;
+  height: 172px;
+  position: relative;
+  left: -30px;
+}
+
+.logo-screen.active {
+  width: 238px;
+  height: 172px;
+  position: relative;
+  left: -30px;
+  filter: blur(5px);
+}
+
+.search-bar {
+  width: 359px;
+  height: 40px;
+  background: #fff;
+  position: absolute;
+  margin: auto;
+  left: 8.5%;
+  border-radius: 50px;
+}
+
+.search-bar.active {
+  width: 359px;
+  height: 40px;
+  background: #fff;
+  position: absolute;
+  margin: auto;
+  left: 8.5%;
+  border-radius: 50px;
+  filter: blur(5px);
+}
+
+.error {
+  position: absolute;
+  margin: auto;
+  left:35%;
+  top:24%;
+  font-size: 17px;
+  color: #c8d8e4;
+  display: none;
+
+}
+
+.error.active {
+  position: absolute;
+  margin: auto;
+  left:35%;
+  top:24.5%;
+  font-size: 18px;
+  color: #c8d8e4;
+  display: none;
+  filter: blur(5px);
+}
+
+.show-all {
+  position: absolute;
+  margin: auto;
+  left:42%;
+  top:26.5%;
+  font-size: 17px;
+  color: #c8d8e4;
+  text-decoration: underline;
+  display: none;
+}
+
+.show-all.active {
+  position: absolute;
+  margin: auto;
+  left:42%;
+  top:27%;
+  font-size: 18px;
+  color: #c8d8e4;
+  text-decoration: underline;
+  display: none;
+  filter: blur(5px);
+}
+
+.stocks-scroll {
+  width: 345px;
+  height: 550px;
+  position: absolute;
+  margin: auto;
+  left: 10%;
+  top: 28.7%;
+  /* overflow: scroll; */
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  overflow-y: scroll;
+}
+
+.stocks-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.stocks-scroll.active {
+  width: 345px;
+  height: 550px;
+  position: absolute;
+  margin: auto;
+  left: 10%;
+  top: 28.7%;
+  /* overflow: scroll; */
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  overflow-y: scroll;
+  filter: blur(5px);
+}
+
+.stocks-scroll.active::-webkit-scrollbar{
+  display: none;
+}
+
+.stock {
+  width: 345px;
+  height: 75px;
+  background: #c8d8e4;
+  border-radius: 10px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  table-layout:fixed;
+}
+
+.nav-bar {
+  width: 428px;
+  height: 100px;
+  position: absolute;
+  margin: auto;
+  top: 90%;
+  background: #fff;
+}
+
+.nav-icon {
+  width: 428px;
+  height: 60px;
+  table-layout: fixed;
+}
+
+.nav-text {
+  width: 428px;
+  table-layout: fixed;
+}
+
+#sidebar {
+  position: relative;
+  top: -120px;
+  width: 128px;
+  /* height: 926px; */
+  height:781px;
+  background: #c8d8e4;
+  left: 428px;
+  transition: .4s;
+  border: none;
+  border-radius: 12px 0 0 0;
+}
+
+#sidebar .menu-button {
+  position: relative;
+  left: -68px;
+  border: none;
+  height: 38px;
+  width: 38px;
+}
+
+#sidebar.active {
+  left: 300px;
+}
+
+ul {
+  padding-left: 5px;
+}
+
+#sidebar ul li {
+  list-style: none;
+  color: #000;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 17px;
+  padding:10px;
+}
+
+#sidebar .heading {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  padding-left: 15px;
+  margin-top: -15px;
+}
+
+#sidebar .line {
+  border-top: 1px solid black;
+}
+
+.hidden-button {
+  width: 128px;
+  height: 926px;
+  top: 0.5%;
+  left: 428px;
+  position: absolute;
+  background: transparent;
+  transition: .4s;
+  border: none;
+  cursor: default;
+}
+
+.hidden-button.active {
+  width: 128px;
+  height: 926px;
+  top: 0.5%;
+  left: 300px;
+  position: absolute;
+  background: transparent;
+  transition: .4s;
+  border: none;
+  cursor: default;
+}
+
+.frame-button {
+  height: 926px;
+  width: 300px;
+  position: relative;
+  top: 50%;
+  left: -35%;
+  margin: -463px 0 0 -150px;
+  border: none;
+  background-color: transparent;
+  transition: .4s;
+  cursor: default;
+}
+
+.frame-button.active {
+  height: 926px;
+  width: 300px;
+  position: relative;
+  top: 50%;
+  left: 35%;
+  margin: -463px 0 0 -150px;
+  border: none;
+  background-color: transparent;
+  transition: .4s;
+  cursor: default;
+}
