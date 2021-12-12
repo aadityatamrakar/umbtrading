@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="./Login/css/signin-page.css" />
+    <link rel="stylesheet" type="text/css" href="./Login/css/styleguide.css" />
+    <link rel="stylesheet" type="text/css" href="./Login/css/globals.css" />
+  </head>
+  <body style="margin: 0; background: #2b6777">
+    <input type="hidden" id="anPageName" name="page" value="signin-page" />
+    <div class="container-center-horizontal">
+      <form class="signin-page screen" name="form1" action="form1" method="post">
+        <div>
+          <div class="login-button-CMFGHq" onclick="signIn(event)">
+            <div class="rectangle-32-uJP57X"></div>
+            <div class="login-uJP57X valign-text-middle">Login</div>
+          </div>
+        </div>
+        <div class="login-CMFGHq">
+          <div class="x-nzhDto">Login</div>
+          <div class="text-block-nzhDto">
+            <input class="text-M9p4kD" id = "login_email" placeholder="Email" type="email" required />
+          </div>
+        </div>
+        <div class="password-CMFGHq">
+          <div class="x-DIKwkA">Password</div>
+          <div class="text-block-DIKwkA">
+            <input class="text-AzizM6" id="login_password" placeholder="Password" type="password" required />
+          </div>
+        </div>
+        <!-- <div class="forgot-password-CMFGHq valign-text-middle">Forgot password?</div> -->
+        <div class="dont-have-an-account-signup-CMFGHq valign-text-middle ubuntu-normal-mercury-20px">
+          <span
+            ><span class="span0-kzLb1q ubuntu-normal-mercury-20px">Don’t have an account?&nbsp;&nbsp;</span
+            ><span class="span1-kzLb1q ubuntu-normal-mercury-20px"><a href="./create-account.html" class="span1-kzLb1q ubuntu-normal-mercury-20px">Signup</span>
+          </span>
+        </div>
+        <img class="logo-CMFGHq" src="./Login/img/logo@2x.png" />
+
+      </form>
+    </div>
+
+
+
+    <!-- <script>
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+    </script>
+
+    <script>import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js";</script>>
+    <script>import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";</script>> -->
+    
+    
+
+    <!-- <script>
+      /* Copyright (c) 2016 Tobias Buschor https://goo.gl/gl0mbf | MIT License https://goo.gl/HgajeK */
+
+      if (!HTMLFormElement.prototype.reportValidity) {
+        HTMLFormElement.prototype.reportValidity = function () {
+          if (this.checkValidity()) return true;
+          var btn = document.createElement("button");
+          this.appendChild(btn);
+          btn.click();
+          this.removeChild(btn);
+          return false;
+        };
+      }
+
+      function SubmitForm(form_name) {
+        var form = document.getElementsByName(form_name)[0];
+        if (form.reportValidity()) {
+          form.submit();
+          if (window.submitted) window.submitted();
+        }
+      }
+    </script> -->
+
+  </body>
+  <script src="./Login/index.js"></script>
+</html>

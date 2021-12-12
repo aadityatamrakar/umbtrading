@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="./sign-up/css/create-account.css" />
+    <link rel="stylesheet" type="text/css" href="./sign-up/css/styleguide.css" />
+    <link rel="stylesheet" type="text/css" href="./sign-up/css/globals.css" />
+  </head>
+  <body style="margin: 0; background: #2b6777">
+    <input type="hidden" id="anPageName" name="page" value="create-account" />
+    <div class="container-center-horizontal">
+      <form role = "form" class="create-account screen" name="form2" action="form2" method="post">
+        <img class="logo" src="./sign-up/img/logo@2x.png" />
+
+        <div class="email" >
+          <div class="textlabel ubuntu-medium-botticelli-16px" >Email</div>
+          <div class="text-block">
+            <input class="text ubuntu-normal-casal-16px" id="Email" placeholder="" type="email" required />
+          </div>
+        </div>
+
+        <div class="password">
+          <div class="textlabel-1" >Password</div>
+          <div class="text-block-1">
+            <input class="text-2" id="password" placeholder="" type="password" required /><img
+              class="mdiremoveredeye"
+              src="./sign-up/img/mdi-remove-red-eye@2x.png"
+            />
+          </div>
+        </div>
+
+        <div class="lastname">
+          <div class="textlabel ubuntu-medium-botticelli-16px">Last name</div>
+          <div class="text-block">
+            <input class="text ubuntu-normal-casal-16px" id="last_name" placeholder="" type="text" required />
+          </div>
+        </div>
+
+        <div class="first-name">
+          <div class="textlabel ubuntu-medium-botticelli-16px">First name</div>
+          <div class="text-block">
+            <input class="text ubuntu-normal-casal-16px" id="first_name" placeholder="" type="text" required />
+          </div>
+        </div>
+
+        <div>
+          <div onclick="signUp(event)" class="button-1">
+            <div class="button-large-filled-enabled">
+              <div class="label"><div class="label-1 valign-text-middle">Create account</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="social-sign-up">
+          <div class="frame-89">
+            <div class="divider"></div>
+            <div class="description">or</div>
+            <div class="divider-1"></div>
+          </div>
+          <a href="javascript:SubmitForm('form2')">
+            <div class="button">
+              <img class="x18-google" src="./sign-up/img/18---google@2x.svg" />
+              <div class="text-1 valign-text-middle">Continue with Google</div>
+              <img class="x18-arrow-right" src="./sign-up/img/18---arrowright@2x.png" /></div
+          ></a>
+        </div> -->
+
+        <div class="check-box">
+        	<div class="mdicheckboxoutlineblank"><input checked type="checkbox"></div>
+          <div class="label-2 valign-text-middle">Send me email notifications.</div>
+        </div>
+        <div class="check-box-1">
+          <div class="mdicheckboxoutlineblank"><input checked type="checkbox"></div>
+          <p class="label-3 valign-text-middle">
+            <span><span class="span0">I agree to the </span><span class="span1"><u>terms and conditions</u></span> </span>
+          </p>
+        </div>
+        <div class="SignIn">
+          <p><span class="span0">Already a member? <a href="./signin-page.html" class="span0"><u>Sign In</u></a></span></p>
+        </div>
+      </form>
+    </div>
+
+
+     
+    <!-- <script type="module">
+  // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDo8T0eYwAWqgn4zSGaKfTyrp_QsrTOXSI",
+    authDomain: "umb-trading.firebaseapp.com",
+    projectId: "umb-trading",
+    storageBucket: "umb-trading.appspot.com",
+    messagingSenderId: "803038027215",
+    appId: "1:803038027215:web:1af44169441edcbbb9c6ba"
+  };
+
+  // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    </script>
+    <script type="module" src = "https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
+    <script type="module" src = "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script> -->
+
+    <!-- <script>
+      /* Copyright (c) 2016 Tobias Buschor https://goo.gl/gl0mbf | MIT License https://goo.gl/HgajeK */
+
+      if (!HTMLFormElement.prototype.reportValidity) {
+        HTMLFormElement.prototype.reportValidity = function () {
+          if (this.checkValidity()) return true;
+          var btn = document.createElement("button");
+          this.appendChild(btn);
+          btn.click();
+          this.removeChild(btn);
+          return false;
+        };
+      }
+
+      function SubmitForm(form_name) {
+        var form = document.getElementsByName(form_name)[0];
+        if (form.reportValidity()) {
+          form.submit();
+          if (window.submitted) window.submitted();
+        }
+      }
+    </script> -->
+    <script src="./sign-up/script.js"></script>
+  </body>
+</html>

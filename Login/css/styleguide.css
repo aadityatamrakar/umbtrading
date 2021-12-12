@@ -1,0 +1,20 @@
+:root { 
+  --black: #000000;
+  --botticelli: #c8d8e4;
+  --casal: #2b6777;
+  --mercury: #e5e5e5;
+ 
+  --font-size-l: 22px;
+  --font-size-m: 20px;
+  --font-size-s: 16px;
+  --font-size-xl: 28px;
+ 
+  --font-family-ubuntu: "Ubuntu", Helvetica;
+}
+.ubuntu-normal-mercury-20px {
+  color: var(--mercury);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
