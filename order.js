@@ -25,7 +25,7 @@ function getQueryParams() {
 		.replace('?', '')
 		.split('&')
 		.reduce((obj, elm) => (elm = elm.split('='), obj[elm[0]] = elm[1], obj), {});
-		
+
 	stockName = searchParams.stock;
 	stockPrice = searchParams.price;
 	transactionType = searchParams.type;
@@ -56,8 +56,9 @@ function updateStockPrice(price) {
 function updatePlaceButtonColor(type) {
 	let setColor = 'var(--green)';
 	if (type == 'Sell') setColor = 'var(--chestnut)';
-	document.getElementById('placeBtn').style.backgroundColor = setColor;
-	document.getElementById('placeBtnText').innerHTML = type;
+	document.getElementById('slider').style.backgroundColor = setColor;
+	// document.getElementById('placeBtn').style.backgroundColor = setColor;
+	document.getElementById('swipe_text').innerHTML = "Swipe to " + type;
 }
 
 function onClickOrderByQuantity(e) {
@@ -158,3 +159,88 @@ function onRiskExposureChange() {
 }
 
 init();
+
+var initialMouse = 0;
+var slideMovementTotal = 0;
+var mouseIsDown = false;
+var slider = $('#slider');
+
+slider.on('mousedown touchstart', function (event) {
+	mouseIsDown = true;
+	slideMovementTotal = $('#button-background').width() - $(this).width() + 10;
+	initialMouse = event.clientX || event.originalEvent.touches[0].pageX;
+});
+
+$(document.body, '#slider').on('mouseup touchend', function (event) {
+	if (!mouseIsDown)
+		return;
+	mouseIsDown = false;
+	var currentMouse = event.clientX || event.changedTouches[0].pageX;
+	var relativeMouse = currentMouse - initialMouse;
+
+	if (relativeMouse < slideMovementTotal) {
+		$('.slide-text').fadeTo(300, 1);
+		slider.animate({
+			left: "-10px"
+		}, 300);
+		return;
+	}
+	slider.addClass('unlocked');
+
+
+	let toggleGlass = false;
+	$('#locker').text('hourglass_top');
+	setInterval(_ => {
+		if (slider.hasClass('unlocked')) {
+			if (toggleGlass) {
+				$('#locker').text('hourglass_bottom');
+			} else $('#locker').text('hourglass_top');
+			toggleGlass = !toggleGlass;
+		}
+	}, 500);
+
+	let togglePlace = true;
+	setTimeout(function () {
+		if (togglePlace && slider.hasClass('unlocked')) {
+			window.location.href = './order-confirmation-page.html';
+		}
+	}, 5000);
+
+	setTimeout(function () {
+		slider.on('click tap', function (event) {
+			togglePlace = false;
+			if (!slider.hasClass('unlocked'))
+				return;
+			slider.removeClass('unlocked');
+			$('#locker').text('arrow_forward_ios');
+			slider.off('click tap');
+		});
+	}, 0);
+});
+
+$(document.body).on('mousemove touchmove', function (event) {
+	if (!mouseIsDown)
+		return;
+
+	var currentMouse = event.clientX || event.originalEvent.touches[0].pageX;
+	var relativeMouse = currentMouse - initialMouse;
+	var slidePercent = 1 - (relativeMouse / slideMovementTotal);
+
+	$('.slide-text').fadeTo(0, slidePercent);
+
+	if (relativeMouse <= 0) {
+		slider.css({
+			'left': '-10px'
+		});
+		return;
+	}
+	if (relativeMouse >= slideMovementTotal + 10) {
+		slider.css({
+			'left': slideMovementTotal + 'px'
+		});
+		return;
+	}
+	slider.css({
+		'left': relativeMouse - 10
+	});
+});

@@ -61,7 +61,9 @@ function update_stock() {
 
       let stock_price = parseInt(stocks[i].prices[0].replace('$', ''));
       update_bid_ask_tbl(stock_price);
-
+      setInterval(_ => {
+        update_bid_ask_tbl(stock_price);
+      }, 1000);
       stock_config.name = encodeURIComponent(stock);
       stock_config.price = stock_price;
     }
