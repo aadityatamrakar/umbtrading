@@ -1,0 +1,27 @@
+:root { 
+  --black: #000000;
+  --botticelli: #c8d8e4;
+  --casal: #2b6777;
+ 
+  --font-size-l: 16px;
+  --font-size-m: 14px;
+  --font-size-xl: 18px;
+ 
+  --font-family-ibm_plex_sans: "IBM Plex Sans", Helvetica;
+  --font-family-ubuntu: "Ubuntu", Helvetica;
+}
+.ubuntu-medium-botticelli-16px {
+  color: var(--botticelli);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.ubuntu-normal-casal-16px {
+  color: var(--casal);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
