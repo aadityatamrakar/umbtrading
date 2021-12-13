@@ -205,7 +205,7 @@ $(document.body, '#slider').on('mouseup touchend', function (event) {
 		if (togglePlace && slider.hasClass('unlocked')) {
 			window.location.href = './order-confirmation-page.html';
 		}
-	}, 5000);
+	}, 3500);
 
 	setTimeout(function () {
 		slider.on('click tap', function (event) {
