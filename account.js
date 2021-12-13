@@ -8,7 +8,7 @@ function init() {
 }
 
 function logout() {
-	window.location.href = 'signin-page.html';
+	window.location.href = 'signin-page.html?success';
 }
 
 init();

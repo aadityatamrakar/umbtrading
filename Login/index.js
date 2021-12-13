@@ -1,4 +1,4 @@
-function success(){
+function success() {
 
   var state = location.search.substring(1);
 
@@ -17,11 +17,12 @@ function success(){
     "showEasing": "swing",
     "hideEasing": "linear",
     "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"}
+    "hideMethod": "fadeOut"
+  }
 
-  if(state==='logout'){
+  if (state === 'logout') {
     toastr.success("Logged out successfully!", "UMBTrading");
-}
+  }
 }
 
 function signIn(e) {
@@ -42,6 +43,9 @@ function signIn(e) {
     alert("Login Failed, Please check your email and password.");
   } else {
     location.href = "landing-page.html?login";
+
+    window.localStorage.setItem("funds", 25000);
+    window.localStorage.setItem("margin_used", 0);
   }
   e.preventDefault();
 }

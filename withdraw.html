@@ -10,13 +10,13 @@
   <link rel="stylesheet" type="text/css" href="./withdraw-user-funds/css/withdraw.css" />
   <link rel="stylesheet" type="text/css" href="./withdraw-user-funds/css/styleguide.css" />
   <link rel="stylesheet" type="text/css" href="./withdraw-user-funds/css/globals.css" />
-  
+
 </head>
 
 <body style="margin: 0; background: #2b6777">
   <input type="hidden" id="anPageName" name="page" value="withdraw" />
   <div class="container-center-horizontal">
-    <form class="withdraw screen" name="form1" action="form1" method="post">
+    <form class="withdraw screen" onsubmit="return false;" name="form1" action="form1" method="post">
       <div class="overlap-group2">
         <img class="logo" src="./withdraw-user-funds/img/logo@2x.png" />
         <div class="payment">
@@ -41,10 +41,10 @@
           </div>
         </div>
       </div>
-      <input class="x0" name="0" placeholder="$0" type="text" /><img class="qty-divider"
+      <input id="funds" class="x0" name="0" placeholder="$0" type="text" /><img class="qty-divider"
         src="./withdraw-user-funds/img/qty-divider@2x.svg" />
       <div class="amount">Amount</div>
-      <a href="javascript:SubmitForm('form1')">
+      <a href="javascript:withdrawFunds();">
         <div class="place-button">
           <div class="overlap-group">
             <h1 class="title valign-text-middle">Withdraw</h1>
@@ -69,12 +69,13 @@
       };
     }
 
-    function SubmitForm(form_name) {
+    function withdrawFunds(form_name) {
       var form = document.getElementsByName(form_name)[0];
-      if (form.reportValidity()) {
-        form.submit();
-        if (window.submitted) window.submitted();
-      }
+      var funds = parseInt(document.getElementById('funds').value);
+      var local_funds = parseInt(window.localStorage.getItem('funds'));
+      window.localStorage.setItem('funds', local_funds - funds);
+      
+      window.location.href = './funds.html?withdrawal';
     }
 
     function displayUserName() {

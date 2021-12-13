@@ -3,6 +3,9 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <style type="text/css">
     .turbolinks-progress-bar {
       position: fixed;
@@ -1973,7 +1976,7 @@
     .funds .x20000-xoOYlZ {
       background-color: transparent;
       height: 21px;
-      left: 259px;
+      right: 20px;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
@@ -2020,7 +2023,7 @@
     .funds .x5000-V4LdNc {
       background-color: transparent;
       height: 21px;
-      left: 269px;
+      right: 20px;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
@@ -2067,7 +2070,7 @@
     .funds .x15000-IxHhU8 {
       background-color: transparent;
       height: 21px;
-      left: 244px;
+      right: 20px;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
@@ -2119,14 +2122,15 @@
       font-style: normal;
       font-weight: 400;
       height: auto;
-      left: 115px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
       text-align: left;
       top: 66px;
-      width: auto;
+      width: 100%;
+      text-align: center;
     }
 
     .funds .available-funds-C2aSnZ {
@@ -2137,14 +2141,15 @@
       font-style: normal;
       font-weight: 400;
       height: auto;
-      left: 95px;
+      left: auto;
       letter-spacing: 0.00px;
       line-height: normal;
       mix-blend-mode: normal;
       position: absolute;
       text-align: left;
       top: 31px;
-      width: auto;
+      width: 100%;
+      text-align: center;
     }
 
     .funds .add-button-C2aSnZ {
@@ -2292,7 +2297,8 @@
       <div class="stats-card-5xRb4N" data-id="63:56">
         <div class="group-20-4L8qD8" data-id="53:833">
           <div class="rectangle-32-xoOYlZ" data-id="53:834"></div>
-          <div class="x20000-xoOYlZ valign-text-middle ubuntu-normal-black-18px" data-id="53:843">$ 20,000</div>
+          <div id="totalAvailable" class="x20000-xoOYlZ valign-text-middle ubuntu-normal-black-18px" data-id="53:843">$
+            20,000</div>
           <div class="cash-available-xoOYlZ valign-text-middle ubuntu-normal-black-18px" data-id="53:841">Cash available
           </div>
         </div>
@@ -2304,20 +2310,22 @@
         </div>
         <div class="group-22-4L8qD8" data-id="53:848">
           <div class="rectangle-32-IxHhU8" data-id="53:849"></div>
-          <div class="x15000-IxHhU8 valign-text-middle ubuntu-normal-black-18px" data-id="53:850">$ (-) 15,000</div>
+          <div id="marginUsed" class="x15000-IxHhU8 valign-text-middle ubuntu-normal-black-18px" data-id="53:850">$ (-)
+            15,000</div>
           <div class="margin-used-IxHhU8 valign-text-middle ubuntu-normal-black-18px" data-id="53:851">Margin used</div>
         </div>
       </div>
       <div class="funds-card-5xRb4N" data-id="81:26">
         <div class="rectangle-37-C2aSnZ" data-id="53:914"></div>
-        <div class="x20000-C2aSnZ" data-id="53:918">$20,000</div>
+        <div id="cashAvailable" class="x20000-C2aSnZ" data-id="53:918">$20,000</div>
         <div class="available-funds-C2aSnZ" data-id="53:915">Available funds</div>
-        <div class="add-button-C2aSnZ" data-id="81:22">
+        <div class="add-button-C2aSnZ" data-id="81:22" onclick="javascript:window.location.href='./add-funds.html';">
           <div class="add-bg-vDr0xx" data-id="77:67"></div>
           <p class="add-funds-vDr0xx valign-text-middle" data-id="77:68">&nbsp;&nbsp;&nbsp;&nbsp;Add funds</p><img
             class="add-icon-vDr0xx" data-id="77:69" src="./funds_files/add-icon@2x.svg">
         </div>
-        <div class="withdraw-button-C2aSnZ" data-id="81:25">
+        <div onclick="javascript:window.location.href='./withdraw.html';" class="withdraw-button-C2aSnZ"
+          data-id="81:25">
           <div class="withdraw-bg-BvYOap" data-id="77:62"></div>
           <p class="withdraw-funds-BvYOap valign-text-middle" data-id="53:928">&nbsp;&nbsp;&nbsp;&nbsp;Withdraw funds
           </p><img class="withdraw-icon-BvYOap" data-id="81:23" src="./funds_files/withdraw-icon@2x.png">
@@ -2326,112 +2334,48 @@
       <div class="your-profile-5xRb4N ubuntu-normal-botticelli-24px" data-id="81:30">Your Funds</div>
     </div>
   </div>
-  <script defer="" src="./funds_files/restart-btn.min.js"></script>
-  <div id="anima-interface" data-turbolinks-permanent="true">
-    <!---->
-    <div id="anima-comment-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
-      <div class="arrow" style="margin-left: 128px;"></div>
-      <div class="popover-content" style="align-items:center">
-        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
-          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
-            Leave feedback and collaborate
-          </h3>
-          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
-            Login to your account to leave comments. Don’t have an account
-            already? Ask for access first.
-          </p>
-          <a target="_blank" rel="noopener noreferrer" class="btn"
-            href="https://projects.animaapp.com/p/undefined/s/funds?mode=comments&amp;utm_campaign=add-comment&amp;utm_source=animaapp.io">Add
-            comment</a>
-        </div>
-
-        <div style="display:flex;align-items:center;justify-content:center;padding-right:20px">
-          <img src="./funds_files/comment-illustration.svg">
-        </div>
-      </div>
-    </div>
-    <div id="anima-code-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
-      <div class="arrow" style="margin-left: 168px;"></div>
-      <div class="popover-content" style="align-items:center">
-        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
-          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
-            Get clean code you’ll love with Anima
-          </h3>
-          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
-            Login and easily export HTML, React or Vue of this prototype.
-            Don’t have an account? Just ask for access.
-          </p>
-          <a target="_blank" rel="noopener noreferrer" class="btn"
-            href="https://projects.animaapp.com/p/undefined/s/funds?mode=code&amp;utm_campaign=get-code&amp;utm_source=animaapp.io">
-            Get code
-          </a>
-        </div>
-
-        <img src="./funds_files/code-illustration.svg">
-      </div>
-    </div>
-    <div class="omniview-anima-action-links" id="actions-wrap">
-      <div class="omniview-anima-action-links">
-        <div id="page-nav" class="link navigation" style="display: none;">
-          <svg id="homepage-icon" class="home-icon" width="24" height="24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M8.151 11a.25.25 0 01-.167-.436l4.349-3.913a.25.25 0 01.334 0l4.349 3.913a.25.25 0 01-.167.436H8.15zM16 12H9v4a1 1 0 001 1h5a1 1 0 001-1v-4z"
-              fill="#fff"></path>
-          </svg>
-
-          <svg class="icon" id="arrow-left" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-
-          <span id="page-num"></span>
-
-          <svg class="icon" id="arrow-right" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-
-        <a class="link" id="comment-link" target="_blank" style="display: none;">
-          <span class="text">Comment</span>
-          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M4.301 15.137a.551.551 0 01.199-.55c.314-.23.554-.554.718-.965A6.015 6.015 0 014 10 6.006 6.006 0   0110.001 4 6.006 6.006 0 0116 10.001 6.006 6.006 0 019.999 16a5.98 5.98 0 01-3.095-.86 3.165 3.165 0 01-1.65.438 3.6  3.6 0 01-.57-.044c-.191-.03-.34-.186-.383-.397z"
-              fill="#fff"></path>
-          </svg>
-        </a>
-
-        <a class="link" id="code-link" target="_blank" style="display: none;">
-          <span class="text">Get Code</span>
-          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 15.667a1 1 0 01-.707-1.708l3.626-3.625-3.626-3.626a1 1 0 111.415-1.415l4.333 4.333a1 1 0 010 1.414l-4.333 4.333a.993.993 0 01-.707.294zM7.333 5a1 1 0 01.707 1.708l-3.626 3.625 3.627 3.626a1 1 0 11-1.415 1.415L2.293 11.04a1 1 0 010-1.415l4.333-4.333A.992.992 0 017.333 5z"
-              fill="#fff"></path>
-          </svg>
-        </a>
-
-        <div class="restart" id="restart-btn" style="display: none;">
-          <svg style="margin-right: 6px" width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M6 11.817A5.017 5.017 0 01.994 6.811c0-.207.169-.375.375-.375s.375.168.375.375A4.265 4.265 0 006 11.067a4.265 4.265 0 004.256-4.256A4.265 4.265 0 006 2.555a.376.376 0 01-.375-.376c0-.206.169-.374.375-.374a5.017 5.017 0 015.006 5.006A5.017 5.017 0 016 11.817z"
-              fill="#fff"></path>
-            <path
-              d="M6.75 4.237a.37.37 0 01-.263-.112l-1.65-1.65a.363.363 0 010-.525L6.487.3c.15-.15.375-.15.525 0 .15.15.15.375 0 .525L5.625 2.212 7.012 3.6c.15.15.15.375 0 .525-.056.075-.15.112-.262.112z"
-              fill="#fff"></path>
-          </svg>
-          Restart
-        </div>
-      </div>
-    </div>
-    <!---->
-  </div>
-  <div id="hotspots_wrapper">
-    <div class="hotspot" id="hp-0" style="width: 71px; height: 55px; top: 849px; left: 831px;"></div>
-    <div class="hotspot" id="hp-1" style="width: 71px; height: 55px; top: 849px; left: 637px;"></div>
-    <div class="hotspot" id="hp-2" style="width: 71px; height: 55px; top: 849px; left: 540px;"></div>
-    <div class="hotspot" id="hp-3" style="top: 696px; left: 1279.55px;"></div>
-  </div>
-  <div id="t_preload_links"></div>
 </body>
-<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+<script>
+  function fundsValues() {
+
+    let cashAvailable = parseInt(window.localStorage.getItem("funds"));
+    let marginUsed = parseInt(window.localStorage.getItem("margin_used"));
+
+    document.getElementById("cashAvailable").innerHTML = "$" + (cashAvailable - marginUsed);
+    document.getElementById("marginUsed").innerHTML = "(-) $" + marginUsed;
+    document.getElementById("totalAvailable").innerHTML = "$" + cashAvailable;
+  }
+  fundsValues();
+
+  function notify() {
+    var state = location.search.substring(1);
+
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-bottom-center",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
+    if (state === 'added') {
+      toastr.success("Funds Added Successfully!", "UMBTrading");
+    }
+    if (state === 'withdrawal') {
+      toastr.success("Funds Withdrawn Successfully!", "UMBTrading");
+    }
+  }
+  notify();
+</script>
 
 </html>
