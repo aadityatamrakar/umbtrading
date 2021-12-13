@@ -50,6 +50,10 @@ function show_menu()
   document.getElementsByClassName('error')[0].classList.toggle('active');
   document.getElementsByClassName('show-all')[0].classList.toggle('active');
   document.getElementsByClassName('stocks-scroll')[0].classList.toggle('active');
+  document.getElementsByClassName('stocks-scroll p.head')[0].classList.toggle('active');
+  document.getElementsByClassName('stocks-scroll p.subhead')[0].classList.toggle('active');
+  document.getElementsByClassName('stocks-scroll p.content')[0].classList.toggle('active');
+
 
   var status = document.getElementById('sidebar').classList.value;
   if (status === 'active')
