@@ -88,3 +88,38 @@ function hide_sidebar()
   }
 
 };
+
+function success(){
+
+  var state = location.search.substring(1);
+
+  let form_data = JSON.parse(localStorage.getItem('current_user')) || [];
+
+  var name = form_data.firstname;
+
+  document.getElementsByClassName('heading')[0].textContent = "Hello, "+name;
+
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-center",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"}
+
+  if(state==='login'){
+    toastr.success("Logged-in successfully!", "UMBTrading");
+  }
+  if(state==='created'){
+    toastr.success("Account created successfully!", "UMBTrading");
+  }
+}

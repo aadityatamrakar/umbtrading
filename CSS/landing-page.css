@@ -221,13 +221,13 @@ ul {
   list-style: none;
   color: #000;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   padding:10px;
 }
 
 #sidebar .heading {
   font-family: 'Ubuntu', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   padding-left: 15px;
   margin-top: -15px;
 }

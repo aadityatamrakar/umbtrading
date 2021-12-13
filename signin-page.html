@@ -9,8 +9,11 @@
     <link rel="stylesheet" type="text/css" href="./Login/css/signin-page.css" />
     <link rel="stylesheet" type="text/css" href="./Login/css/styleguide.css" />
     <link rel="stylesheet" type="text/css" href="./Login/css/globals.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   </head>
-  <body style="margin: 0; background: #2b6777">
+  <body style="margin: 0; background: #2b6777" onload="success()">
     <input type="hidden" id="anPageName" name="page" value="signin-page" />
     <div class="container-center-horizontal">
       <form class="signin-page screen" name="form1" action="form1" method="post">
@@ -53,8 +56,8 @@
 
     <script>import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js";</script>>
     <script>import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";</script>> -->
-    
-    
+
+
 
     <!-- <script>
       /* Copyright (c) 2016 Tobias Buschor https://goo.gl/gl0mbf | MIT License https://goo.gl/HgajeK */
@@ -78,7 +81,6 @@
         }
       }
     </script> -->
-
   </body>
   <script src="./Login/index.js"></script>
 </html>

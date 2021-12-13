@@ -5,7 +5,7 @@ const signUp = e => {
         password = document.getElementById("password").value;
 
     let error_msg = '';
-    
+
     // form validation
     if (firstname.length == 0) error_msg += 'First Name is required.\n';
     if (lastname.length == 0) error_msg += 'Last Name is required.\n';
@@ -38,7 +38,7 @@ const signUp = e => {
             document.getElementById("Email").focus();
 
             // alert("Account Created.\n\nPlease Sign In using the link below.");
-            window.location.href = "./landing-page.html";
+            window.location.href = "./landing-page.html?created";
         } else {
             alert("You account already exist, Logging in using same credentials...");
             window.location.href = "./landing-page.html";

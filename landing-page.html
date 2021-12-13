@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/landing-page.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src = "./JS/landing-page.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -15,7 +18,7 @@
     <meta charset="utf-8">
     <title>landing-page</title>
   </head>
-  <body>
+  <body onload="success()">
     <div class="outer-frame">
       <div class="frame">
         <!-- Logo -->
@@ -119,18 +122,18 @@
         <div class="nav-bar">
           <table class="nav-icon">
             <tr align="center">
-              <td><img src="Icons/watchlist1.png" style="width:42px;height:42px;"></td>
-              <td><img src="Icons/portfolio2.png" style="width:42px;height:42px;"></td>
-              <td><img src="Icons/funds2.png" style="width:38px;height:38px;"></td>
-              <td><img src="Icons/account2.png" style="width:42px;height:42px;"></td>
+              <td onclick="javascript:window.location.href='landing-page.html'" style="cursor:pointer;"><img src="Icons/watchlist1.png" style="width:42px;height:42px;"></td>
+              <td onclick="javascript:window.location.href='portfolio-page.html'" style="cursor:pointer;"><img src="Icons/portfolio2.png" style="width:42px;height:42px;"></td>
+              <td onclick="javascript:window.location.href='funds.html'" style="cursor:pointer;"><img src="Icons/funds2.png" style="width:38px;height:38px;"></td>
+              <td onclick="javascript:window.location.href='accounts-page.html'" style="cursor:pointer;"><img src="Icons/account2.png" style="width:42px;height:42px;"></td>
             </tr>
           </table>
           <table class="nav-text">
             <tr align="center">
-              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;color:#52ab98;">Watchlist</td>
-              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;">Portfolio</td>
-              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;">Funds</td>
-              <td style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;">Account</td>
+              <td onclick="javascript:window.location.href='landing-page.html'" style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;color:#52ab98;cursor:pointer;">Watchlist</td>
+              <td onclick="javascript:window.location.href='portfolio-page.html'" style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;cursor:pointer;">Portfolio</td>
+              <td onclick="javascript:window.location.href='funds.html'" style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;cursor:pointer;">Funds</td>
+              <td onclick="javascript:window.location.href='accounts-page.html'" style="text-align:center;font-family: 'Ubuntu', sans-serif;font-size: 17px;cursor:pointer;">Account</td>
             </tr>
           </table>
         </div>
@@ -142,12 +145,12 @@
           <p class="heading">Hello, user</p>
           <div class="line"></div>
           <ul>
-            <li>Sign-in</li>
-            <li>Sign-up</li>
-            <li>Watchlist</li>
-            <li>Portfolio</li>
-            <li>Funds</li>
-            <li>Account</li>
+            <li onclick="javascript:window.location.href='landing-page.html'" style="cursor:pointer;">Watchlist</li>
+            <li onclick="javascript:window.location.href='portfolio-page.html'" style="cursor:pointer;">Portfolio</li>
+            <li onclick="javascript:window.location.href='funds.html'" style="cursor:pointer;">Funds</li>
+            <li onclick="javascript:window.location.href='accounts-page.html'" style="cursor:pointer;">Account</li>
+            <li onclick="javascript:window.location.href='help-page.html'" style="cursor:pointer;">Help</li>
+            <li onclick="javascript:window.location.href='signin-page.html?logout'" style="cursor:pointer;">Logout</li>
           </ul>
         </div>
       </div>
