@@ -79,6 +79,7 @@ function init() {
 	getQueryParams();
 	updateStockName(stockName);
 	updateStockPrice(stockPrice);
+	availableFunds = parseInt(window.localStorage.getItem('funds'));
 	updateAvailableMargin(availableFunds);
 	onRiskExposureChange();
 	updatePlaceButtonColor(transactionType);

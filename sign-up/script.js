@@ -24,6 +24,8 @@ const signUp = e => {
                 } else return false;
             });
 
+        window.localStorage.setItem("funds", 25000);
+        window.localStorage.setItem("margin_used", 0);
         if (!exist) {
             let current_user = {
                 firstname,
@@ -41,7 +43,7 @@ const signUp = e => {
             window.location.href = "./landing-page.html?created";
         } else {
             alert("You account already exist, Logging in using same credentials...");
-            window.location.href = "./landing-page.html";
+            window.location.href = "./landing-page.html?login";
         }
     }
     e.preventDefault();
