@@ -18,8 +18,9 @@ function init() {
 
 	let order_size = parseInt(stockPrice * quantity);
 	let funds = parseInt(window.localStorage.getItem('funds'));
+	let margin_used = parseInt(window.localStorage.getItem('margin_used'));
 	window.localStorage.setItem('funds', (funds - order_size));
-	window.localStorage.setItem('margin_used', order_size);
+	window.localStorage.setItem('margin_used', (margin_used + order_size));
 }
 
 init();
