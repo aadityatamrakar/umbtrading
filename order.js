@@ -79,6 +79,7 @@ function init() {
 	getQueryParams();
 	updateStockName(stockName);
 	updateStockPrice(stockPrice);
+	availableFunds = parseInt(window.localStorage.getItem('funds'));
 	updateAvailableMargin(availableFunds);
 	onRiskExposureChange();
 	updatePlaceButtonColor(transactionType);
@@ -204,7 +205,7 @@ $(document.body, '#slider').on('mouseup touchend', function (event) {
 		if (togglePlace && slider.hasClass('unlocked')) {
 			window.location.href = './order-confirmation-page.html';
 		}
-	}, 5000);
+	}, 3500);
 
 	setTimeout(function () {
 		slider.on('click tap', function (event) {

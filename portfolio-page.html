@@ -1549,14 +1549,14 @@
         <div class="portfolio-u07dq6" data-id="44:316">Portfolio</div>
         <div class="group-25-u07dq6" data-id="44:317">
           <div class="holding-value-ZO8ZsI ubuntu-normal-black-10px" data-id="44:318">Holding value</div>
-          <div class="x250975-ZO8ZsI" data-id="44:319">$2,509.75</div>
+          <div id="profit" class="x250975-ZO8ZsI" data-id="44:319">$2,509.75</div>
         </div>
         <div class="group-26-u07dq6" data-id="44:320">
-          <div class="x161875-3br5nJ ubuntu-normal-black-18px" data-id="44:321">$1,618.75</div>
+          <div id="invested" class="x161875-3br5nJ ubuntu-normal-black-18px" data-id="44:321">$1,618.75</div>
           <div class="invested-value-3br5nJ ubuntu-normal-black-10px" data-id="44:322">Invested value</div>
         </div>
         <div class="group-29-u07dq6" data-id="44:323">
-          <div class="x15000-kV9sgk ubuntu-normal-black-18px" data-id="44:324">$15,000</div>
+          <div id="availableFunds" class="x15000-kV9sgk ubuntu-normal-black-18px" data-id="44:324">$15,000</div>
           <div class="available-margin-kV9sgk ubuntu-normal-black-10px" data-id="44:325">Available Margin</div>
         </div><img class="line-2-u07dq6" data-id="44:326" src="./portfolio-page_files/line-2@2x.svg"
           anima-src="https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/line-2@2x.svg">
@@ -1593,104 +1593,17 @@
         anima-src="https://cdn.animaapp.com/projects/61a6c3e2007619e275898592/releases/61a6c41c120e09b800ae8bfd/img/logo-1@2x.png">
     </div>
   </div>
-  <script defer="" src="./portfolio-page_files/restart-btn.min.js"></script>
-  <div id="anima-interface" data-turbolinks-permanent="true">
-    <!---->
-    <div id="anima-comment-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
-      <div class="arrow" style="margin-left: 128px;"></div>
-      <div class="popover-content" style="align-items:center">
-        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
-          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
-            Leave feedback and collaborate
-          </h3>
-          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
-            Login to your account to leave comments. Don’t have an account
-            already? Ask for access first.
-          </p>
-          <a target="_blank" rel="noopener noreferrer" class="btn"
-            href="https://projects.animaapp.com/p/undefined/s/portfolio-page?mode=comments&amp;utm_campaign=add-comment&amp;utm_source=animaapp.io">Add
-            comment</a>
-        </div>
-
-        <div style="display:flex;align-items:center;justify-content:center;padding-right:20px">
-          <img src="./portfolio-page_files/comment-illustration.svg">
-        </div>
-      </div>
-    </div>
-    <div id="anima-code-popover" class="popover top" role="tooltip" style="left: -205px; top: -220px;">
-      <div class="arrow" style="margin-left: 168px;"></div>
-      <div class="popover-content" style="align-items:center">
-        <div style="display:flex;flex-direction:column;height: 100%;padding: 20px;">
-          <h3 style="font-size:18px;margin-bottom:10px;font-weight:500;line-height: 26px;font-family: Roslindale;">
-            Get clean code you’ll love with Anima
-          </h3>
-          <p style="font-size:12px;margin-bottom:20px;font-weight:400;line-height: 20px;">
-            Login and easily export HTML, React or Vue of this prototype.
-            Don’t have an account? Just ask for access.
-          </p>
-          <a target="_blank" rel="noopener noreferrer" class="btn"
-            href="https://projects.animaapp.com/p/undefined/s/portfolio-page?mode=code&amp;utm_campaign=get-code&amp;utm_source=animaapp.io">
-            Get code
-          </a>
-        </div>
-
-        <img src="./portfolio-page_files/code-illustration.svg">
-      </div>
-    </div>
-    <div class="omniview-anima-action-links" id="actions-wrap">
-      <div class="omniview-anima-action-links">
-        <div id="page-nav" class="link navigation" style="display: none;">
-          <svg id="homepage-icon" class="home-icon" width="24" height="24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M8.151 11a.25.25 0 01-.167-.436l4.349-3.913a.25.25 0 01.334 0l4.349 3.913a.25.25 0 01-.167.436H8.15zM16 12H9v4a1 1 0 001 1h5a1 1 0 001-1v-4z"
-              fill="#fff"></path>
-          </svg>
-
-          <svg class="icon" id="arrow-left" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-
-          <span id="page-num"></span>
-
-          <svg class="icon" id="arrow-right" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </div>
-
-        <a class="link" id="comment-link" target="_blank" style="display: none;">
-          <span class="text">Comment</span>
-          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M4.301 15.137a.551.551 0 01.199-.55c.314-.23.554-.554.718-.965A6.015 6.015 0 014 10 6.006 6.006 0   0110.001 4 6.006 6.006 0 0116 10.001 6.006 6.006 0 019.999 16a5.98 5.98 0 01-3.095-.86 3.165 3.165 0 01-1.65.438 3.6  3.6 0 01-.57-.044c-.191-.03-.34-.186-.383-.397z"
-              fill="#fff"></path>
-          </svg>
-        </a>
-
-        <a class="link" id="code-link" target="_blank" style="display: none;">
-          <span class="text">Get Code</span>
-          <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 15.667a1 1 0 01-.707-1.708l3.626-3.625-3.626-3.626a1 1 0 111.415-1.415l4.333 4.333a1 1 0 010 1.414l-4.333 4.333a.993.993 0 01-.707.294zM7.333 5a1 1 0 01.707 1.708l-3.626 3.625 3.627 3.626a1 1 0 11-1.415 1.415L2.293 11.04a1 1 0 010-1.415l4.333-4.333A.992.992 0 017.333 5z"
-              fill="#fff"></path>
-          </svg>
-        </a>
-
-        <div class="restart" id="restart-btn" style="display: none;">
-          <svg style="margin-right: 6px" width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M6 11.817A5.017 5.017 0 01.994 6.811c0-.207.169-.375.375-.375s.375.168.375.375A4.265 4.265 0 006 11.067a4.265 4.265 0 004.256-4.256A4.265 4.265 0 006 2.555a.376.376 0 01-.375-.376c0-.206.169-.374.375-.374a5.017 5.017 0 015.006 5.006A5.017 5.017 0 016 11.817z"
-              fill="#fff"></path>
-            <path
-              d="M6.75 4.237a.37.37 0 01-.263-.112l-1.65-1.65a.363.363 0 010-.525L6.487.3c.15-.15.375-.15.525 0 .15.15.15.375 0 .525L5.625 2.212 7.012 3.6c.15.15.15.375 0 .525-.056.075-.15.112-.262.112z"
-              fill="#fff"></path>
-          </svg>
-          Restart
-        </div>
-      </div>
-    </div>
-    <!---->
-  </div>
-  <div id="bdcd55b2-8b8e-42c3-95de-cd030a3dbb5d-quickmenu"></div>
 </body>
+
+<script>
+  function displayValues() {
+    let funds = parseInt(window.localStorage.getItem('funds'));
+    let margin_used = parseInt(window.localStorage.getItem('margin_used'));
+
+    document.getElementById('availableFunds').innerHTML = "$" + funds;
+    document.getElementById('invested').innerHTML = "$" + margin_used;
+  }
+  displayValues();
+</script>
+
 </html>
