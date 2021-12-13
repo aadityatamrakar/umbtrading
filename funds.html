@@ -2341,7 +2341,7 @@
     let cashAvailable = parseInt(window.localStorage.getItem("funds"));
     let marginUsed = parseInt(window.localStorage.getItem("margin_used"));
 
-    document.getElementById("cashAvailable").innerHTML = "$" + (cashAvailable - marginUsed);
+    document.getElementById("cashAvailable").innerHTML = "$" + (cashAvailable);
     document.getElementById("marginUsed").innerHTML = "(-) $" + marginUsed;
     document.getElementById("totalAvailable").innerHTML = "$" + cashAvailable;
   }
