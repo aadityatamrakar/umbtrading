@@ -4,6 +4,90 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <style type="text/css">
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: #3a3d55;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #button-background {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.3);
+      width: 350px;
+      height: 70px;
+      border: white;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #slider {
+      transition: width 0.3s, border-radius 0.3s, height 0.3s;
+      position: absolute;
+      left: -10px;
+      background-color: white;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #slider.unlocked {
+      transition: all 0.3s;
+      width: inherit;
+      left: 0 !important;
+      height: inherit;
+      border-radius: inherit;
+    }
+
+    .material-icons {
+      color: black;
+      font-size: 50px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+    }
+
+    .slide-text {
+      color: #c8d8e4;
+      font-size: 24px;
+      text-transform: capitalize;
+      font-family: "Roboto", sans-serif;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+    }
+
+    .bottom {
+      position: fixed;
+      bottom: 0;
+      font-size: 14px;
+      color: white;
+    }
+
+    .bottom a {
+      color: white;
+    }
+  </style>
+  <style type="text/css">
     .turbolinks-progress-bar {
       position: fixed;
       display: block;
@@ -109,9 +193,9 @@
       display: none !important;
     }
   </style>
-  <script id="s_turbo" src="./order-page_files/turbolinks.min.js"></script>
+  <!-- <script id="s_turbo" src="./order-page_files/turbolinks.min.js"></script>
   <script id="anima-overrides-script" src="./order-page_files/overrides.js"></script>
-  <script src="./order-page_files/timeline.js"></script>
+  <script src="./order-page_files/timeline.js"></script> -->
   <style>
     @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
@@ -1520,7 +1604,8 @@
   <style data-emotion="css"></style>
   <style>
     @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
+    @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+    @import url("https://fonts.googleapis.com/css?family=Roboto");
     @import url("https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic|ABeeZee:400");
 
     .screen textarea:focus,
@@ -2376,12 +2461,20 @@
 <body style="margin: 0;background: #2b6777;"><input type="hidden" id="anPageName" name="page" value="order-page">
   <div class="container-center-horizontal">
     <div class="order-page screen " data-id="52:2997">
-      <div id="stock_name" class="apple-wkvuW5 valign-text-middle" data-id="52:3015">Apple</div><a
-        href="./order-confirmation-page.html">
-        <div class="place-button-wkvuW5" data-id="84:22" data-hotspot-id="hp-0">
+      <div id="stock_name" class="apple-wkvuW5 valign-text-middle" data-id="52:3015">Apple</div>
+      <!-- <a href="./order-confirmation-page.html"> -->
+      <a href="javascript:void();">
+
+        <div id="button-background" style="position: absolute;left: 40px;top: 760px;">
+          <span id="swipe_text" class="slide-text">Swipe to Buy</span>
+          <div id="slider">
+            <i id="locker" class="material-icons">arrow_forward_ios</i>
+          </div>
+        </div>
+        <!-- <div class="place-button-wkvuW5" data-id="84:22" data-hotspot-id="hp-0">
           <div id="placeBtn" class="rectangle-59-uCPg44" data-id="59:503"></div>
           <div id="placeBtnText" class="place-uCPg44 valign-text-middle" data-id="59:504">Place</div>
-        </div>
+        </div> -->
       </a><a href="javascript:history.back();">
         <div class="cancel-button-wkvuW5" data-id="52:3261" data-hotspot-id="hp-1">
           <div class="cancel-f8l8Bf ubuntu-normal-botticelli-24px" data-id="52:3263">Cancel</div>
@@ -2421,8 +2514,8 @@
       <img class="logo-wkvuW5" data-id="52:3014" src="./order-page_files/logo-1@2x.png">
     </div>
   </div>
-  <script defer="" src="./order-page_files/restart-btn.min.js"></script>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="./order.js"></script>
 
 </html>

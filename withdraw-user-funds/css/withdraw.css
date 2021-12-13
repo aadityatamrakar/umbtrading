@@ -1,0 +1,224 @@
+/* screen - withdraw */
+
+.withdraw {
+  align-items: center;
+  background-color: #2b6777;
+  display: flex;
+  flex-direction: column;
+  height: 812px;
+  overflow: hidden;
+  padding: 26px 0;
+  width: 375px;
+}
+
+.withdraw .overlap-group2 {
+  height: 466px;
+  position: relative;
+  width: 807px;
+}
+
+.withdraw .logo {
+  height: 172px;
+  left: 181px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 238px;
+}
+
+.withdraw .payment {
+  align-items: flex-start;
+  display: flex;
+  height: 322px;
+  left: 0;
+  padding: 65px 254.8px;
+  position: absolute;
+  top: 144px;
+  width: 807px;
+}
+
+.withdraw .overlap-group1 {
+  align-items: flex-end;
+  background-color: var(--wild-blue-yonder);
+  border-radius: 12.99px;
+  box-shadow: 0px 5px 20px #00000026;
+  display: flex;
+  flex-direction: column;
+  min-height: 181px;
+  padding: 30.5px 26.2px;
+  width: 292px;
+}
+
+.withdraw .visa {
+  align-self: flex-start;
+  height: 18px;
+  margin-left: 5.07px;
+  width: 52px;
+}
+
+.withdraw .card-number {
+  align-items: flex-start;
+  display: flex;
+  height: 30px;
+  margin-top: 27px;
+  width: 234px;
+}
+
+.withdraw .text-1 {
+  letter-spacing: 1.66px;
+  min-height: 28px;
+  opacity: 0.5;
+  text-align: right;
+  width: 40px;
+}
+
+.withdraw .card-number-item {
+  letter-spacing: 1.66px;
+  margin-left: 25px;
+  min-height: 28px;
+  opacity: 0.5;
+  text-align: right;
+  width: 40px;
+}
+
+.withdraw .number {
+  align-self: center;
+  color: var(--white);
+  font-family: var(--font-family-graphik-regular);
+  font-size: var(--font-size-l);
+  font-weight: 400;
+  letter-spacing: 1.04px;
+  margin-left: 27px;
+  margin-top: 3.57px;
+  min-height: 17px;
+  text-align: right;
+  width: 39px;
+}
+
+.withdraw .flex-row {
+  align-items: flex-start;
+  display: flex;
+  margin-top: 16px;
+  min-width: 234px;
+}
+
+.withdraw .holder {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 27px;
+  overflow: hidden;
+  width: 98px;
+}
+
+.withdraw .card-holder {
+  letter-spacing: 0;
+  min-height: 11px;
+  opacity: 0.5;
+  width: 58px;
+}
+
+.withdraw .aycan-doganlar {
+  letter-spacing: 0;
+  margin-top: 3px;
+  min-height: 14px;
+  width: 98px;
+}
+
+.withdraw .expires {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 27px;
+  margin-left: 102px;
+  overflow: hidden;
+  width: 35px;
+}
+
+.withdraw .expires-1 {
+  letter-spacing: 0;
+  min-height: 11px;
+  opacity: 0.5;
+  text-align: right;
+  width: 35px;
+}
+
+.withdraw .text-3 {
+  letter-spacing: 0;
+  margin-left: 1.02px;
+  margin-top: 3px;
+  min-height: 14px;
+  text-align: right;
+  width: 34px;
+}
+
+.withdraw .x0 {
+  background-color: transparent;
+  border: 0;
+  color: var(--mercury);
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 400;
+  height: 46px;
+  letter-spacing: 0;
+  margin-right: 2.0px;
+  margin-top: 22px;
+  padding: 0;
+  text-align: center;
+  width: 251px;
+}
+
+.withdraw .x0::placeholder {
+  color: #e5e5e599;
+}
+
+.withdraw .qty-divider {
+  height: 3px;
+  margin-left: 1.0px;
+  margin-top: 8px;
+  width: 254px;
+}
+
+.withdraw .amount {
+  color: var(--mercury);
+  font-family: var(--font-family-ubuntu);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-left: 3.0px;
+  margin-top: 8px;
+  min-height: 36px;
+  text-align: center;
+  width: 110px;
+}
+
+.withdraw .place-button {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  margin-left: 3.0px;
+  margin-top: 64px;
+  min-width: 304px;
+}
+
+.withdraw .overlap-group {
+  align-items: center;
+  background-color: #ba4848;
+  border-radius: 12px;
+  display: flex;
+  height: 72px;
+  justify-content: flex-end;
+  min-width: 302px;
+  padding: 0 27.2px;
+}
+
+.withdraw .title {
+  color: #ffffffd4;
+  font-family: var(--font-family-ubuntu);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 400;
+  height: 46px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 246px;
+}
