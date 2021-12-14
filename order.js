@@ -44,7 +44,20 @@ function updateAvailableMargin(margin) {
 }
 
 function updateStockName(stock) {
-	document.getElementById('stock_name').innerHTML = stock;
+	stock = decodeURIComponent(stock);
+	let stockAbbr = {
+		"Apple": "Apple",
+		"Shell": "Shell",
+		"Instagram": "Instagram",
+		"Tesla": "Tesla",
+		"McDonald's": "MCD",
+		"Volkswagen": "VWAGY",
+		"Mastercard": "MA",
+		"KFC": "KFC",
+		"Nike": "Nike",
+		"Huawei": "Huawei",
+	};
+	document.getElementById('stock_name').innerHTML = stockAbbr[stock];
 	window.localStorage.setItem('stock_name', stock);
 }
 
